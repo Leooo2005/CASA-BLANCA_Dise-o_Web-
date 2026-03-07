@@ -1,0 +1,437 @@
+/* =========================================
+   1. VARIABLES DE COLOR Y RESETEO BÁSICO
+   ========================================= */
+:root {
+    /* Colores profundos y finos (Ébano) */
+    --cafe-muy-oscuro: #0B0806;
+    --cafe-medio: #1A130E;
+    
+    /* Letras y acentos */
+    --crema: #F9F1E7;
+    --dorado: #D4AF37;
+    
+    --fuente-titulos: 'Playfair Display', serif;
+    --fuente-textos: 'Syne', sans-serif;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { 
+    background-color: var(--cafe-muy-oscuro); 
+    color: var(--crema); 
+    font-family: var(--fuente-textos); 
+    overflow-x: hidden; 
+}
+
+/* =========================================
+   2. NAVEGACIÓN BASE
+   ========================================= */
+.navbar-premium {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100px;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 0 5%; z-index: 100;
+    background: linear-gradient(to bottom, rgba(20,13,10,0.9) 0%, rgba(20,13,10,0) 100%);
+}
+.logo-nav { height: 65px; object-fit: contain; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5)); }
+
+.enlaces-nav { display: flex; align-items: center; }
+.enlaces-nav > a {
+    color: var(--crema); text-decoration: none; margin-left: 30px;
+    font-size: 0.9rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;
+    transition: color 0.3s ease;
+}
+.enlaces-nav > a:hover, .enlaces-nav > a.activo { color: var(--dorado); }
+
+/* =========================================
+   3. MEGA MENÚ DESPLEGABLE (ESCRITORIO)
+   ========================================= */
+.mega-dropdown {
+    position: relative;
+    display: inline-block;
+    margin-left: 30px;
+}
+
+.mega-dropdown .dropbtn { 
+    color: var(--crema); text-decoration: none; 
+    font-size: 0.9rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;
+    cursor: pointer; transition: color 0.3s ease;
+}
+.mega-dropdown:hover .dropbtn { color: var(--dorado); }
+
+.mega-contenido {
+    display: none; position: absolute; top: 100%; left: -150px; 
+    background-color: var(--cafe-medio); min-width: 650px; 
+    box-shadow: 0px 20px 40px rgba(0,0,0,0.8);
+    border-top: 2px solid var(--dorado); border-radius: 0 0 12px 12px;
+    z-index: 101; padding: 30px; margin-top: 25px; 
+}
+
+.mega-dropdown::after {
+    content: ''; position: absolute; top: 100%; left: 0; width: 100%; height: 25px; background: transparent;
+}
+.mega-contenido.bebidas-ancho { min-width: 300px; left: -50px; }
+
+@media (min-width: 901px) {
+    .mega-dropdown:hover .mega-contenido { display: block; animation: aparecerMegaMenu 0.3s ease forwards; }
+}
+
+@keyframes aparecerMegaMenu {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.mega-fila { display: flex; justify-content: space-between; gap: 40px; }
+.mega-columna-wifi { flex: 1.2; border-right: 1px solid rgba(255,255,255,0.1); padding-right: 30px; }
+.mega-columna-enlaces { flex: 1; display: flex; flex-direction: column; }
+
+.titulo-mega { font-family: var(--fuente-titulos); color: var(--dorado); font-size: 1.5rem; margin-bottom: 15px; font-weight: 400; font-style: italic; }
+.desc-mega { font-size: 0.8rem; color: rgba(243, 229, 216, 0.7); margin-bottom: 20px; line-height: 1.4; }
+
+/* SECCIÓN WI-FI */
+.caja-wifi { 
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    gap: 20px; background-color: rgba(0,0,0,0.2); padding: 20px; border-radius: 8px; margin-bottom: 20px; 
+}
+.img-qr { width: 110px; height: 110px; border-radius: 6px; border: 2px solid var(--dorado); padding: 4px; background-color: #fff; }
+.info-wifi { text-align: center; }
+.info-wifi p { font-size: 0.9rem; color: var(--crema); margin-bottom: 5px; }
+.info-wifi span { font-weight: 700; color: var(--dorado); }
+
+.promo-lunes { background-color: var(--dorado); color: var(--cafe-muy-oscuro); padding: 12px 15px; border-radius: 6px; font-size: 0.85rem; font-weight: 700; text-align: center; }
+
+.efecto-levantar { transition: transform 0.3s ease, box-shadow 0.3s ease; cursor: default; }
+.efecto-levantar:hover { transform: translateY(-4px); box-shadow: 0 10px 20px rgba(0,0,0,0.4); }
+
+.mega-columna-enlaces a {
+    color: var(--crema); padding: 12px 0; text-decoration: none;
+    font-size: 0.9rem; border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.3s ease; margin: 0;
+}
+.mega-columna-enlaces a:last-child { border-bottom: none; }
+.mega-columna-enlaces a:hover { color: var(--dorado); padding-left: 10px; }
+
+/* =========================================
+   4. HERO (INICIO)
+   ========================================= */
+.hero-seccion {
+    position: relative; height: 100vh; width: 100%;
+    background-image: url('img/hero-inicio.webp'); background-size: cover; background-position: center;
+    display: flex; justify-content: center; align-items: center; text-align: center;
+}
+.overlay-oscuro { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(20, 13, 10, 0.6); z-index: 1; }
+.overlay-oscuro.fuerte { background-color: rgba(20, 13, 10, 0.85); }
+.hero-contenido { position: relative; z-index: 2; max-width: 800px; padding: 0 20px; }
+.titulo-principal { font-family: var(--fuente-titulos); font-size: clamp(3rem, 6vw, 5.5rem); font-style: italic; color: var(--crema); line-height: 1.1; margin-bottom: 20px; text-shadow: 0 4px 10px rgba(0,0,0,0.5); }
+.subtitulo-hero { font-size: 1.1rem; font-weight: 400; letter-spacing: 2px; text-transform: uppercase; color: var(--dorado); }
+
+/* =========================================
+   5. SECCIÓN HISTORIA
+   ========================================= */
+.historia-seccion { padding: 100px 5%; background-color: var(--cafe-muy-oscuro); display: flex; justify-content: center; }
+.historia-contenedor { max-width: 1200px; width: 100%; display: flex; align-items: center; gap: 80px; }
+.historia-texto { flex: 1.2; padding-right: 20px; } 
+.titulo-seccion { font-family: var(--fuente-titulos); font-size: 3rem; color: var(--dorado); margin-bottom: 25px; }
+.parrafo-elegante { font-size: 1.05rem; line-height: 1.8; color: rgba(243, 229, 216, 0.8); margin-bottom: 35px; }
+.historia-imagen { flex: 1; }
+.contenedor-img-historia { width: 100%; max-height: 550px; border-radius: 12px; overflow: hidden; box-shadow: 0 20px 50px rgba(0,0,0,0.5); border: 1px solid rgba(197, 160, 89, 0.2); }
+.img-fluida { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.5s ease; }
+.contenedor-img-historia:hover .img-fluida { transform: scale(1.05); }
+
+/* =========================================
+   6. ENLACES ANIMADOS WHATSAPP
+   ========================================= */
+.enlace-animado-wa {
+    display: inline-flex; align-items: center; color: var(--dorado); font-size: 1rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;
+    text-decoration: none; position: relative; padding-bottom: 5px; overflow: hidden; 
+}
+.enlace-animado-wa::after { content: ''; position: absolute; bottom: 0; left: 0; width: 100%; height: 1px; background-color: rgba(197, 160, 89, 0.3); transition: all 0.4s ease; }
+.flecha-wa { opacity: 0; transform: translateX(-15px); transition: all 0.4s ease; margin-left: -10px; font-size: 1.2rem; }
+.enlace-animado-wa:hover::after { background-color: var(--dorado); height: 2px; }
+.enlace-animado-wa:hover .flecha-wa { opacity: 1; transform: translateX(8px); }
+
+.enlace-animado-wa.claro { color: var(--crema); }
+.enlace-animado-wa.claro::after { background-color: rgba(243, 229, 216, 0.3); }
+.enlace-animado-wa.claro:hover::after { background-color: var(--crema); }
+
+/* =========================================
+   7. FÚTBOL Y CÓCTELES
+   ========================================= */
+.futbol-seccion {
+    position: relative; padding: 120px 5%; background-image: url('img/foto-partido.webp'); background-size: cover; background-position: center; background-attachment: fixed;
+    display: flex; justify-content: center; align-items: center; text-align: center;
+}
+.futbol-contenido { position: relative; z-index: 2; max-width: 700px; display: flex; flex-direction: column; align-items: center; }
+.titulo-seccion.claro { color: var(--crema); margin-bottom: 40px; }
+.parrafo-elegante.claro { color: rgba(243, 229, 216, 0.9); margin-top: 30px; margin-bottom: 40px; font-size: 1.2rem; }
+.horarios-caja { padding: 25px 50px; border: 1px solid rgba(197, 160, 89, 0.4); border-radius: 12px; background-color: rgba(20, 13, 10, 0.65); backdrop-filter: blur(8px); box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
+.horarios-caja p { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 2px; color: var(--dorado); margin-bottom: 8px; }
+.horarios-caja h3 { font-family: var(--fuente-titulos); font-size: 2.2rem; font-weight: 400; color: var(--crema); }
+
+.efecto-premium { transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease; }
+.efecto-premium:hover { transform: translateY(-8px) scale(1.02); box-shadow: 0 20px 40px rgba(0,0,0,0.6); border-color: var(--dorado); }
+.efecto-premium-delay { transition: opacity 0.3s ease, transform 0.3s ease; }
+.efecto-premium-delay:hover { transform: translateY(-3px); opacity: 0.8; }
+
+/* =========================================
+   8. FOOTER RESPONSABLE
+   ========================================= */
+.footer-responsable { background-color: #0d0806; padding: 60px 20px; text-align: center; display: flex; flex-direction: column; align-items: center; }
+.linea-adorno { width: 50px; height: 2px; background-color: var(--dorado); margin-bottom: 30px; }
+.texto-responsable { font-family: var(--fuente-titulos); font-style: italic; font-size: 1.2rem; color: rgba(243, 229, 216, 0.7); line-height: 1.6; margin-bottom: 30px; }
+.ingles { font-size: 1rem; opacity: 0.6; display: block; margin-top: 5px; }
+.copyright-demo { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: var(--dorado); opacity: 0.5; }
+
+/* =========================================
+   9. PÁGINAS INTERNAS (CABECERA)
+   ========================================= */
+.hero-interno {
+    position: relative; height: 60vh; width: 100%;
+    background-color: var(--cafe-medio); 
+    background-image: url('img/fondo-interna.webp'); background-size: cover; background-position: center center;
+    display: flex; align-items: center; justify-content: center; text-align: center; padding-top: 100px; border-bottom: 1px solid rgba(197, 160, 89, 0.2);
+}
+.hero-interno .overlay-oscuro { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(20, 13, 10, 0.65); z-index: 1; }
+.contenido-interno { position: relative; z-index: 2; padding: 0 20px; }
+.titulo-interno { font-family: var(--fuente-titulos); font-size: clamp(2.5rem, 5vw, 4.5rem); color: #ffffff; font-style: italic; letter-spacing: 1px; }
+.subtitulo-interno { font-size: 1rem; color: var(--dorado); text-transform: uppercase; letter-spacing: 3px; font-weight: 700; margin-top: 10px; }
+.linea-adorno-centro { width: 80px; height: 2px; background-color: var(--dorado); margin: 15px auto; }
+
+/* =========================================
+   10. MENÚ DE ALTA GAMA (ESTILO RESTAURANTE PREMIUM)
+   ========================================= */
+.seccion-menu-lujo { padding: 100px 5%; background-color: var(--cafe-muy-oscuro); }
+.contenedor-menu-lujo { max-width: 1050px; margin: 0 auto; }
+.categoria-menu { text-align: center; margin-top: 60px; margin-bottom: 50px; }
+.categoria-menu:first-child { margin-top: 0; }
+.titulo-categoria { font-family: var(--fuente-textos); font-size: 1.2rem; color: var(--dorado); text-transform: uppercase; letter-spacing: 4px; font-weight: 800; }
+.linea-categoria { width: 60px; height: 2px; background-color: var(--dorado); margin: 15px auto 0 auto; }
+
+.grid-lujo { display: grid; grid-template-columns: repeat(2, 1fr); gap: 60px 80px; }
+.plato-lujo { display: flex; flex-direction: column; }
+.plato-lujo-cabecera { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; }
+.plato-lujo-nombre { font-family: var(--fuente-titulos); font-size: 1.6rem; color: #ffffff; font-weight: 400; letter-spacing: 0.5px; }
+.plato-lujo-linea { flex-grow: 1; height: 1px; background-color: rgba(197, 160, 89, 0.4); margin: 0 20px; position: relative; top: 4px; }
+.plato-lujo-precio { font-family: var(--fuente-titulos); font-size: 1.5rem; color: var(--dorado); font-weight: 700; }
+.plato-lujo-desc { font-family: var(--fuente-textos); font-size: 1rem; line-height: 1.6; color: #f3e5d8; opacity: 0.85; font-style: italic; padding-right: 20px; }
+
+/* =========================================
+   11. DETALLES ÉLITE (ETIQUETAS, LETRA PEQUEÑA Y FLOTANTE)
+   ========================================= */
+/* Etiquetas GF y V */
+.etiqueta-dieta { font-size: 0.7rem; color: var(--cafe-muy-oscuro); background-color: var(--dorado); padding: 3px 6px; border-radius: 4px; margin-left: 10px; vertical-align: middle; font-family: var(--fuente-textos); font-weight: 800; letter-spacing: 1px; }
+/* Recomendación del Chef */
+.recomendacion-chef { display: block; font-size: 0.85rem; color: var(--dorado); font-style: italic; margin-bottom: 5px; margin-top: -8px; font-family: var(--fuente-textos); font-weight: 700; }
+/* Letra Pequeña al final del menú */
+.letra-pequena-menu { text-align: center; margin-top: 80px; padding-top: 40px; border-top: 1px solid rgba(197, 160, 89, 0.2); }
+.letra-pequena-menu p { font-size: 0.85rem; color: rgba(243, 229, 216, 0.5); font-style: italic; line-height: 1.6; margin-bottom: 10px; }
+.leyenda-dietas span { color: var(--dorado); font-weight: 700; }
+
+/* Botón Flotante de WhatsApp */
+.btn-flotante-wa {
+    position: fixed; bottom: 30px; right: 30px; background-color: var(--dorado); color: var(--cafe-muy-oscuro);
+    padding: 15px 25px; border-radius: 50px; font-family: var(--fuente-textos); font-weight: 700; font-size: 0.95rem;
+    text-decoration: none; display: flex; align-items: center; gap: 10px; box-shadow: 0 10px 25px rgba(0,0,0,0.6);
+    z-index: 1000; transition: transform 0.3s ease, box-shadow 0.3s ease; text-transform: uppercase; letter-spacing: 1px;
+}
+.btn-flotante-wa:hover { transform: translateY(-5px) scale(1.05); box-shadow: 0 15px 35px rgba(197, 160, 89, 0.4); }
+.icono-wa { font-size: 1.2rem; }
+
+/* =========================================
+   12. RESPONSIVE MÓVIL BÁSICO Y GENERAL
+   ========================================= */
+@media (max-width: 900px) {
+    .historia-contenedor { flex-direction: column; text-align: center; gap: 40px; }
+    .historia-texto { padding-right: 0; }
+    .enlace-animado-wa { margin: 0 auto; justify-content: center; }
+    .horarios-caja h3 { font-size: 1.5rem; }
+    .grid-lujo { grid-template-columns: 1fr; gap: 50px; }
+    .plato-lujo-nombre { font-size: 1.4rem; }
+    .plato-lujo-precio { font-size: 1.3rem; }
+}
+
+@media (max-width: 768px) {
+    .btn-flotante-wa { bottom: 20px; right: 20px; padding: 12px 20px; font-size: 0.85rem; }
+}
+
+/* =========================================
+   13. MENÚ VISUAL GOURMET
+   ========================================= */
+.seccion-menu-visual { padding: 100px 5%; background-color: var(--cafe-muy-oscuro); }
+.contenedor-menu-visual { max-width: 1200px; margin: 0 auto; }
+.grid-visual { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; }
+.item-visual-plato { background-color: var(--cafe-medio); border: 1px solid rgba(197, 160, 89, 0.15); border-radius: 8px; overflow: hidden; display: flex; align-items: center; transition: transform 0.3s ease, box-shadow 0.3s ease; }
+.item-visual-plato:hover { transform: translateY(-5px); box-shadow: 0 15px 35px rgba(0,0,0,0.5); border-color: rgba(197, 160, 89, 0.4); }
+.visual-img-contenedor { width: 45%; height: 100%; overflow: hidden; border-right: 1px solid rgba(197, 160, 89, 0.2); }
+.visual-img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+.item-visual-plato:hover .visual-img { transform: scale(1.1); }
+.visual-texto-contenedor { width: 55%; padding: 20px; }
+.visual-cabecera { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px; }
+.visual-nombre { font-family: var(--fuente-titulos); font-size: 1.3rem; color: #ffffff; font-weight: 400; }
+.visual-precio { font-family: var(--fuente-titulos); font-size: 1.25rem; color: var(--dorado); font-weight: 700; margin-left: 10px; }
+.visual-desc { font-family: var(--fuente-textos); font-size: 0.85rem; line-height: 1.5; color: rgba(243, 229, 216, 0.8); font-style: italic; }
+
+@media (max-width: 900px) {
+    .grid-visual { grid-template-columns: 1fr; gap: 20px; }
+    .item-visual-plato { flex-direction: column; }
+    .visual-img-contenedor { width: 100%; height: 200px; border-right: none; border-bottom: 1px solid rgba(197, 160, 89, 0.2); }
+    .visual-texto-contenedor { width: 100%; text-align: center; }
+    .visual-cabecera { flex-direction: column; align-items: center; }
+    .visual-precio { margin-left: 0; margin-top: 5px; }
+}
+
+/* --- FONDOS DE PÁGINAS INTERNAS --- */
+.hero-comidas { background-image: url('img/fondo-interna2.webp'); background-position: center center; }
+.hero-infantil { background-image: url('img/papitas.webp'); background-position: center center; }
+.hero-cocteles { background-image: url('img/coctel.webp'); background-position: center center; }
+.hero-vinos { background-image: url('img/licores.webp'); background-position: center center; }
+.hero-postres { background-image: url('img/postres.webp'); background-position: center center; }
+.hero-contacto { background-image: url('img/fondo-contacto.webp'); background-position: center center; }
+
+/* =========================================
+   14. MENÚ COMPACTO A DOS COLUMNAS (BEBIDAS)
+   ========================================= */
+.contenedor-menu-tamanos { max-width: 1200px; margin: 0 auto; }
+.grid-tamanos { display: grid; grid-template-columns: repeat(2, 1fr); gap: 40px 80px; }
+.item-doble-compacto { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(197, 160, 89, 0.15); padding-bottom: 15px; transition: transform 0.3s ease; }
+.item-doble-compacto:hover { transform: translateX(5px); }
+.item-info { flex: 1; padding-right: 20px; }
+.item-nombre { font-family: var(--fuente-titulos); font-size: 1.15rem; color: #ffffff; font-weight: 400; margin-bottom: 4px; letter-spacing: 0.5px; }
+.item-alc { font-family: var(--fuente-textos); font-size: 0.65rem; color: var(--cafe-muy-oscuro); background-color: var(--dorado); padding: 2px 6px; border-radius: 4px; margin-left: 8px; font-weight: 800; letter-spacing: 0.5px; vertical-align: middle; }
+.item-desc { font-family: var(--fuente-textos); font-size: 0.8rem; line-height: 1.4; color: rgba(243, 229, 216, 0.6); font-style: italic; }
+.item-precios-compacto { display: flex; gap: 15px; }
+.precio-col { display: flex; flex-direction: column; align-items: center; min-width: 60px; }
+.precio-col span { font-family: var(--fuente-textos); font-size: 0.65rem; color: var(--dorado); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 2px; }
+.precio-col strong { font-family: var(--fuente-titulos); font-size: 1.15rem; color: var(--dorado); font-weight: 700; }
+
+@media (max-width: 900px) { .grid-tamanos { grid-template-columns: 1fr; gap: 30px; } }
+@media (max-width: 500px) { .item-doble-compacto { flex-direction: column; align-items: flex-start; } .item-info { padding-right: 0; margin-bottom: 12px; } .item-precios-compacto { width: 100%; justify-content: flex-end; } }
+
+/* =========================================
+   15. PÁGINA DE CONTACTO Y REDES SOCIALES
+   ========================================= */
+.seccion-contacto-lujo { padding: 100px 5%; background-color: var(--cafe-muy-oscuro); }
+.contenedor-contacto { max-width: 1100px; margin: 0 auto; display: flex; gap: 80px; align-items: center; }
+.info-contacto-caja { flex: 1; }
+.titulo-contacto { font-family: var(--fuente-titulos); font-size: 2.5rem; color: #ffffff; font-weight: 400; line-height: 1.2; margin-bottom: 25px; }
+.titulo-contacto span { color: var(--dorado); font-size: 1.2rem; font-family: var(--fuente-textos); text-transform: uppercase; letter-spacing: 4px; font-weight: 700; }
+.desc-contacto { font-family: var(--fuente-textos); font-size: 1rem; line-height: 1.8; color: rgba(243, 229, 216, 0.8); margin-bottom: 40px; }
+.bloque-info { margin-bottom: 25px; }
+.subtitulo-info { font-family: var(--fuente-textos); font-size: 0.9rem; color: var(--dorado); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 8px; }
+.bloque-info p { font-family: var(--fuente-textos); font-size: 1.05rem; line-height: 1.6; color: #ffffff; }
+
+/* Redes */
+.bloque-redes { margin-top: 35px; }
+.enlaces-redes { display: flex; gap: 25px; margin-top: 10px; }
+.link-red-social { font-family: var(--fuente-textos); font-size: 0.9rem; color: rgba(243, 229, 216, 0.7); text-decoration: none; text-transform: uppercase; letter-spacing: 2px; font-weight: 700; position: relative; transition: color 0.3s ease, transform 0.3s ease; display: flex; align-items: center; gap: 8px; }
+.link-red-social i { font-size: 1.1rem; }
+.link-red-social::after { content: ''; position: absolute; bottom: -6px; left: 0; width: 0%; height: 1px; background-color: var(--dorado); transition: width 0.3s ease; }
+.link-red-social:hover { color: var(--dorado); transform: translateY(-2px); }
+.link-red-social:hover::after { width: 100%; }
+
+/* Botones Contacto */
+.acciones-contacto-caja { flex: 1; display: flex; flex-direction: column; gap: 20px; }
+.btn-gigante-reserva { display: flex; align-items: center; gap: 20px; padding: 30px; border-radius: 12px; text-decoration: none; transition: transform 0.3s ease, box-shadow 0.3s ease; }
+.btn-gigante-reserva:hover { transform: translateY(-5px); }
+.icono-gigante { font-size: 2.5rem; }
+.texto-btn-gigante h3 { font-family: var(--fuente-titulos); font-size: 1.6rem; margin-bottom: 5px; font-weight: 400; }
+.texto-btn-gigante p { font-family: var(--fuente-textos); font-size: 0.85rem; font-style: italic; opacity: 0.8; }
+.wa-btn { background: linear-gradient(135deg, rgba(197, 160, 89, 0.2) 0%, rgba(197, 160, 89, 0.05) 100%); border: 1px solid var(--dorado); color: var(--dorado); }
+.wa-btn:hover { box-shadow: 0 15px 30px rgba(197, 160, 89, 0.2); background: rgba(197, 160, 89, 0.1); }
+.mapa-btn { background-color: var(--cafe-medio); border: 1px solid rgba(243, 229, 216, 0.1); color: #ffffff; }
+.mapa-btn:hover { box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5); border-color: rgba(243, 229, 216, 0.3); }
+.nota-vestimenta { margin-top: 20px; text-align: center; }
+.nota-vestimenta p { font-size: 0.85rem; color: rgba(243, 229, 216, 0.6); line-height: 1.5; margin-top: 15px; }
+
+/* Mapa */
+.mapa-contenedor { width: 100%; height: 250px; margin-top: 20px; border-radius: 12px; overflow: hidden; border: 1px solid rgba(197, 160, 89, 0.3); box-shadow: 0 10px 30px rgba(0,0,0,0.5); transition: border-color 0.3s ease; }
+.mapa-contenedor:hover { border-color: var(--dorado); }
+.mapa-contenedor iframe { width: 100%; height: 100%; border: 0; filter: grayscale(80%) invert(90%) contrast(1.2) hue-rotate(180deg); }
+
+@media (max-width: 900px) { .contenedor-contacto { flex-direction: column; gap: 50px; } .titulo-contacto { font-size: 2rem; } }
+
+/* =========================================
+   17. OPTIMIZACIÓN EXTREMA (IPHONE 8)
+   ========================================= */
+@media (max-width: 400px) {
+    .titulo-principal { font-size: 2.2rem; }
+    .titulo-interno { font-size: 2rem; }
+    .titulo-contacto { font-size: 1.8rem; }
+    .btn-gigante-reserva { padding: 15px; flex-direction: column; text-align: center; gap: 10px; }
+    .icono-gigante { font-size: 2rem; }
+    .texto-btn-gigante h3 { font-size: 1.3rem; }
+    .btn-flotante-wa { bottom: 15px; right: 15px; padding: 10px 15px; font-size: 0.75rem; }
+    .plato-lujo-nombre { font-size: 1.3rem; }
+    .item-precios-compacto { gap: 10px; }
+    .precio-col strong { font-size: 1rem; }
+    .enlaces-redes { flex-direction: column; gap: 15px; align-items: flex-start; }
+}
+
+/* =========================================
+   18. MENÚ MÓVIL "LUJO MINIMALISTA" ACORDEÓN
+   ========================================= */
+/* Logo Superior */
+.logo-link { display: flex; align-items: center; text-decoration: none; gap: 12px; z-index: 1001; position: relative; }
+.logo-texto { font-family: var(--fuente-textos); color: var(--crema); font-size: 1.2rem; font-weight: 300; text-transform: uppercase; letter-spacing: 3px; white-space: nowrap; }
+
+/* Botón Hamburguesa Asimétrico */
+.menu-toggle { display: none; flex-direction: column; cursor: pointer; z-index: 1001; gap: 7px; align-items: flex-end; }
+.menu-toggle .bar { height: 1px; background-color: var(--crema); transition: all 0.4s cubic-bezier(0.77, 0, 0.175, 1); }
+.menu-toggle .bar:nth-child(1) { width: 30px; }
+.menu-toggle .bar:nth-child(2) { width: 18px; }
+.menu-toggle .bar:nth-child(3) { width: 30px; }
+
+/* Animación a 'X' */
+.menu-toggle.is-active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); background-color: var(--dorado); }
+.menu-toggle.is-active .bar:nth-child(2) { opacity: 0; width: 0; }
+.menu-toggle.is-active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); background-color: var(--dorado); }
+
+/* RESPONSIVE MÓVIL (Max 900px) */
+@media (max-width: 900px) {
+    .menu-toggle { display: flex; }
+    .navbar-premium { justify-content: space-between; padding: 0 30px; }
+    
+    /* Panel lateral elegante */
+    .enlaces-nav {
+        position: fixed; top: 0; right: -100%; width: 85%; max-width: 350px; height: 100vh;
+        background: rgba(11, 8, 6, 0.98); backdrop-filter: blur(10px);
+        display: flex; flex-direction: column; justify-content: flex-start; 
+        padding: 100px 30px 50px 30px; transition: right 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+        z-index: 1000; box-shadow: -10px 0 30px rgba(0,0,0,0.8); overflow-y: auto;
+    }
+    .enlaces-nav.active { right: 0; }
+
+    /* Ocultar el WiFi que es solo para PC */
+    .mega-columna-wifi, .titulo-mega { display: none; }
+
+    /* Textos principales minimalistas */
+    .enlaces-nav > a, .mega-dropdown .dropbtn {
+        font-family: var(--fuente-textos); font-weight: 300; font-size: 1.1rem;
+        color: var(--crema); text-transform: uppercase; letter-spacing: 2px;
+        margin: 15px 0; text-align: center; display: block; width: 100%; border-bottom: none;
+    }
+
+    /* Magia del Acordeón oculto */
+    .mega-contenido {
+        position: static; min-width: 100%; background: transparent; border: none;
+        box-shadow: none; padding: 0; margin: 0;
+        max-height: 0; overflow: hidden; opacity: 0;
+        transition: max-height 0.5s ease, opacity 0.4s ease;
+    }
+
+    /* Expandir Acordeón (Controlado por JS) */
+    .mega-dropdown.active-accordion .mega-contenido {
+        max-height: 400px; opacity: 1; padding: 10px 0 20px 0;
+    }
+
+    /* Sub-enlaces de la comida en móvil */
+    .mega-columna-enlaces { flex-direction: column; align-items: center; gap: 12px; }
+    .mega-columna-enlaces a {
+        font-size: 0.9rem; text-transform: capitalize; color: rgba(243, 229, 216, 0.6);
+        padding: 5px 0; border: none; letter-spacing: 1px; margin: 0;
+    }
+    .mega-columna-enlaces a:hover { color: var(--dorado); padding-left: 0; }
+}
+
+@media (max-width: 400px) {
+    .logo-texto { font-size: 1rem; letter-spacing: 2px; }
+    .logo-nav { height: 40px; }
+}
