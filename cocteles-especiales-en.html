@@ -23,10 +23,33 @@
             </a>
         </div>
         
-        <div class="menu-toggle" id="mobile-menu">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
+        <div class="herramientas-top">
+            <button id="btn-abrir-buscador" class="btn-buscar-lujo" aria-label="Search menu">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+            </button>
+
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+
+        <div id="caja-buscador-dropdown" class="buscador-dropdown">
+            <div class="input-wrapper">
+                <input type="text" id="input-buscador" placeholder="Type your craving & press Enter..." autocomplete="off">
+                <button id="btn-cerrar-buscador">✕</button>
+            </div>
+            <div class="buscador-idioma-box">
+                <span id="txt-lang-search">Search in:</span>
+                <button class="btn-lang-buscar" data-lang="es">ES</button>
+                <button class="btn-lang-buscar active" data-lang="en">EN</button>
+            </div>
+            
+            <div id="resultados-busqueda" class="resultados-busqueda"></div>
         </div>
 
         <div class="enlaces-nav">
@@ -100,7 +123,7 @@
             </div>
 
             <div class="grid-lujo">
-                <div class="plato-lujo">
+                <div class="plato-lujo" id="coctel-patron-ahumado">
                     <div class="plato-lujo-cabecera">
                         <h3 class="plato-lujo-nombre">The Smoked Patrón</h3>
                         <div class="plato-lujo-linea"></div>
@@ -110,7 +133,7 @@
                     <p class="plato-lujo-desc">Artisanal mezcal, orange liqueur, fresh lime juice, agave syrup, and a touch of black salt. Presented with oak wood smoke at the table.</p>
                 </div>
 
-                <div class="plato-lujo">
+                <div class="plato-lujo" id="coctel-viuda-negra">
                     <div class="plato-lujo-cabecera">
                         <h3 class="plato-lujo-nombre">Black Widow</h3>
                         <div class="plato-lujo-linea"></div>
@@ -119,7 +142,7 @@
                     <p class="plato-lujo-desc">Premium blackberry-infused vodka, sweet vermouth, cranberry juice, and a dash of lavender bitters. Elegant and mysterious.</p>
                 </div>
 
-                <div class="plato-lujo">
+                <div class="plato-lujo" id="coctel-spritz">
                     <div class="plato-lujo-cabecera">
                         <h3 class="plato-lujo-nombre">Casa Blanca Spritz</h3>
                         <div class="plato-lujo-linea"></div>
@@ -128,7 +151,7 @@
                     <p class="plato-lujo-desc">Italian Prosecco, elderflower liqueur, fresh mint leaves, and a splash of artisanal soda. Bubbly and highly refreshing.</p>
                 </div>
 
-                <div class="plato-lujo">
+                <div class="plato-lujo" id="coctel-pasion-andina">
                     <div class="plato-lujo-cabecera">
                         <h3 class="plato-lujo-nombre">Andean Passion</h3>
                         <div class="plato-lujo-linea"></div>
@@ -137,7 +160,7 @@
                     <p class="plato-lujo-desc">Botanical gin, fresh passion fruit purée, rosemary syrup, and egg white for an unforgettable velvety texture.</p>
                 </div>
 
-                <div class="plato-lujo">
+                <div class="plato-lujo" id="coctel-golden-negroni">
                     <div class="plato-lujo-cabecera">
                         <h3 class="plato-lujo-nombre">Golden Negroni</h3>
                         <div class="plato-lujo-linea"></div>
@@ -153,7 +176,7 @@
             </div>
 
             <div class="grid-lujo">
-                <div class="plato-lujo">
+                <div class="plato-lujo" id="coctel-old-fashioned">
                     <div class="plato-lujo-cabecera">
                         <h3 class="plato-lujo-nombre">Reserve Old Fashioned</h3>
                         <div class="plato-lujo-linea"></div>
@@ -162,7 +185,7 @@
                     <p class="plato-lujo-desc">12-year bourbon, brown sugar, Angostura bitters, and flamed orange peel. The king of the bar.</p>
                 </div>
 
-                <div class="plato-lujo">
+                <div class="plato-lujo" id="coctel-margarita">
                     <div class="plato-lujo-cabecera">
                         <h3 class="plato-lujo-nombre">Cadillac Margarita</h3>
                         <div class="plato-lujo-linea"></div>
@@ -171,7 +194,7 @@
                     <p class="plato-lujo-desc">100% agave reposado tequila, Grand Marnier, freshly squeezed lime juice, and a worm salt rim.</p>
                 </div>
                 
-                <div class="plato-lujo">
+                <div class="plato-lujo" id="coctel-martini">
                     <div class="plato-lujo-cabecera">
                         <h3 class="plato-lujo-nombre">Dry Martini</h3>
                         <div class="plato-lujo-linea"></div>
@@ -180,7 +203,7 @@
                     <p class="plato-lujo-desc">London Dry Gin or Premium Vodka (your choice), a whisper of dry vermouth, and Sevillian olives or a lemon twist.</p>
                 </div>
 
-                <div class="plato-lujo">
+                <div class="plato-lujo" id="coctel-moscow-mule">
                     <div class="plato-lujo-cabecera">
                         <h3 class="plato-lujo-nombre">Artisanal Moscow Mule</h3>
                         <div class="plato-lujo-linea"></div>
@@ -189,7 +212,7 @@
                     <p class="plato-lujo-desc">Pure vodka, house-made ginger beer, lime juice, served in our signature frosted copper mug.</p>
                 </div>
 
-                <div class="plato-lujo">
+                <div class="plato-lujo" id="coctel-mojito">
                     <div class="plato-lujo-cabecera">
                         <h3 class="plato-lujo-nombre">Royal Mojito</h3>
                         <div class="plato-lujo-linea"></div>

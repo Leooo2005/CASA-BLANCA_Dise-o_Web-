@@ -23,10 +23,33 @@
             </a>
         </div>
         
-        <div class="menu-toggle" id="mobile-menu">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
+        <div class="herramientas-top">
+            <button id="btn-abrir-buscador" class="btn-buscar-lujo" aria-label="Buscar menú">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+            </button>
+
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+
+        <div id="caja-buscador-dropdown" class="buscador-dropdown">
+            <div class="input-wrapper">
+                <input type="text" id="input-buscador" placeholder="Escribe tu antojo y presiona Enter..." autocomplete="off">
+                <button id="btn-cerrar-buscador">✕</button>
+            </div>
+            <div class="buscador-idioma-box">
+                <span id="txt-lang-search">Buscar en:</span>
+                <button class="btn-lang-buscar active" data-lang="es">ES</button>
+                <button class="btn-lang-buscar" data-lang="en">EN</button>
+            </div>
+            
+            <div id="resultados-busqueda" class="resultados-busqueda"></div>
         </div>
 
         <div class="enlaces-nav">
@@ -100,7 +123,8 @@
             </div>
 
             <div class="grid-tamanos">
-                <div class="item-doble-compacto">
+                
+                <div class="item-doble-compacto" id="bebida-golden-ale">
                     <div class="item-info">
                         <h3 class="item-nombre">Golden Ale Casa Blanca <span class="item-alc">5.0%</span></h3>
                         <p class="item-desc">Nuestra rubia insignia. Ligera, refrescante y con sutiles notas de miel.</p>
@@ -111,7 +135,7 @@
                     </div>
                 </div>
 
-                <div class="item-doble-compacto">
+                <div class="item-doble-compacto" id="bebida-ipa-andina">
                     <div class="item-info">
                         <h3 class="item-nombre">IPA Andina (Páramo) <span class="item-alc">6.8%</span></h3>
                         <p class="item-desc">Amargor pronunciado, notas a maracuyá, pomelo y resina de pino. Intensa.</p>
@@ -122,7 +146,7 @@
                     </div>
                 </div>
 
-                <div class="item-doble-compacto">
+                <div class="item-doble-compacto" id="bebida-stout-cacao">
                     <div class="item-info">
                         <h3 class="item-nombre">Stout Cacao Fino <span class="item-alc">7.5%</span></h3>
                         <p class="item-desc">Negra y sedosa, elaborada con cacao orgánico ecuatoriano y café tostado.</p>
@@ -133,7 +157,7 @@
                     </div>
                 </div>
 
-                <div class="item-doble-compacto">
+                <div class="item-doble-compacto" id="bebida-amber-ale">
                     <div class="item-info">
                         <h3 class="item-nombre">Amber Ale Volcánica <span class="item-alc">5.8%</span></h3>
                         <p class="item-desc">Color cobrizo profundo. Balance perfecto entre malta caramelo y lúpulo floral.</p>
@@ -144,7 +168,7 @@
                     </div>
                 </div>
 
-                <div class="item-doble-compacto">
+                <div class="item-doble-compacto" id="bebida-weissbier">
                     <div class="item-info">
                         <h3 class="item-nombre">Weissbier Trigo Místico <span class="item-alc">4.9%</span></h3>
                         <p class="item-desc">Estilo alemán, turbia y refrescante. Aromas naturales a plátano y clavo de olor.</p>
@@ -155,7 +179,7 @@
                     </div>
                 </div>
 
-                <div class="item-doble-compacto">
+                <div class="item-doble-compacto" id="bebida-pilsner">
                     <div class="item-info">
                         <h3 class="item-nombre">Pilsner Ecuatorial <span class="item-alc">4.5%</span></h3>
                         <p class="item-desc">Cerveza clara, súper refrescante, crujiente y con un final seco perfecto.</p>
@@ -166,7 +190,7 @@
                     </div>
                 </div>
 
-                <div class="item-doble-compacto">
+                <div class="item-doble-compacto" id="bebida-saison">
                     <div class="item-info">
                         <h3 class="item-nombre">Saison de los Andes <span class="item-alc">6.2%</span></h3>
                         <p class="item-desc">Cerveza de granja belga, afrutada, especiada y con alta efervescencia.</p>
@@ -177,7 +201,7 @@
                     </div>
                 </div>
 
-                <div class="item-doble-compacto">
+                <div class="item-doble-compacto" id="bebida-porter">
                     <div class="item-info">
                         <h3 class="item-nombre">Porter Ahumada en Leña <span class="item-alc">6.0%</span></h3>
                         <p class="item-desc">Cuerpo medio, sabores a chocolate negro y un toque de humo de madera de manzano.</p>
@@ -195,7 +219,8 @@
             </div>
 
             <div class="grid-tamanos">
-                <div class="item-doble-compacto">
+                
+                <div class="item-doble-compacto" id="vino-malbec">
                     <div class="item-info">
                         <h3 class="item-nombre">Malbec Reserva <span class="item-alc">Arg</span></h3>
                         <p class="item-desc">Mendoza. El rey de las carnes. Notas a ciruela madura, vainilla y roble.</p>
@@ -206,7 +231,7 @@
                     </div>
                 </div>
 
-                <div class="item-doble-compacto">
+                <div class="item-doble-compacto" id="vino-cabernet">
                     <div class="item-info">
                         <h3 class="item-nombre">Cabernet Sauvignon <span class="item-alc">Chi</span></h3>
                         <p class="item-desc">Valle de Colchagua. Gran cuerpo, frutos negros, pimienta y toques ahumados.</p>
@@ -217,7 +242,7 @@
                     </div>
                 </div>
 
-                <div class="item-doble-compacto">
+                <div class="item-doble-compacto" id="vino-carmenere">
                     <div class="item-info">
                         <h3 class="item-nombre">Carménère Gran Reserva <span class="item-alc">Chi</span></h3>
                         <p class="item-desc">La cepa ícono. Suave, sedoso, con notas a frutos rojos y pimiento asado.</p>
@@ -228,7 +253,7 @@
                     </div>
                 </div>
 
-                <div class="item-doble-compacto">
+                <div class="item-doble-compacto" id="vino-merlot">
                     <div class="item-info">
                         <h3 class="item-nombre">Merlot Clásico <span class="item-alc">Arg</span></h3>
                         <p class="item-desc">Agradable y redondo. Frutos rojos del bosque, chocolate y un final muy dócil.</p>
@@ -239,7 +264,7 @@
                     </div>
                 </div>
 
-                <div class="item-doble-compacto">
+                <div class="item-doble-compacto" id="vino-chardonnay">
                     <div class="item-info">
                         <h3 class="item-nombre">Chardonnay Barrica <span class="item-alc">Chi</span></h3>
                         <p class="item-desc">Blanco cremoso con notas a durazno blanco, mantequilla y un toque tostado.</p>
@@ -250,7 +275,7 @@
                     </div>
                 </div>
 
-                <div class="item-doble-compacto">
+                <div class="item-doble-compacto" id="vino-sauvignon">
                     <div class="item-info">
                         <h3 class="item-nombre">Sauvignon Blanc <span class="item-alc">NZ</span></h3>
                         <p class="item-desc">Marlborough. Vibrante y fresco. Explosión de maracuyá, lima y notas herbáceas.</p>
@@ -261,7 +286,7 @@
                     </div>
                 </div>
 
-                <div class="item-doble-compacto">
+                <div class="item-doble-compacto" id="vino-pinot-noir">
                     <div class="item-info">
                         <h3 class="item-nombre">Pinot Noir Estate <span class="item-alc">USA</span></h3>
                         <p class="item-desc">California. Sofisticado, cereza fresca, fresa y toques terrosos. Ideal con salmón.</p>
@@ -272,7 +297,7 @@
                     </div>
                 </div>
 
-                <div class="item-doble-compacto">
+                <div class="item-doble-compacto" id="vino-syrah">
                     <div class="item-info">
                         <h3 class="item-nombre">Syrah Selección <span class="item-alc">Esp</span></h3>
                         <p class="item-desc">Potente e intenso. Moras, especias oscuras y un toque de cacao al final.</p>
@@ -291,7 +316,7 @@
 
             <div class="grid-tamanos">
                 
-                <div class="item-doble-compacto">
+                <div class="item-doble-compacto" id="licor-miske">
                     <div class="item-info">
                         <h3 class="item-nombre">Miske Agave Andino <span class="item-alc">Ecuador</span></h3>
                         <p class="item-desc">El "Tequila" ecuatoriano. Destilado 100% de penco andino. Notas herbales y ahumadas.</p>
@@ -302,7 +327,7 @@
                     </div>
                 </div>
 
-                <div class="item-doble-compacto">
+                <div class="item-doble-compacto" id="licor-pajaro-azul">
                     <div class="item-info">
                         <h3 class="item-nombre">Pájaro Azul Premium <span class="item-alc">Ecuador</span></h3>
                         <p class="item-desc">Aguardiente de caña doblemente destilado con hojas de naranja y anís. Tradición viva.</p>
@@ -313,7 +338,7 @@
                     </div>
                 </div>
 
-                <div class="item-doble-compacto">
+                <div class="item-doble-compacto" id="licor-gin-crespo">
                     <div class="item-info">
                         <h3 class="item-nombre">Gin Crespo London Dry <span class="item-alc">Ecuador</span></h3>
                         <p class="item-desc">Ginebra premium de los Andes premiada mundialmente. Elaborada con agua de deshielo.</p>
@@ -324,7 +349,7 @@
                     </div>
                 </div>
 
-                <div class="item-doble-compacto">
+                <div class="item-doble-compacto" id="licor-macallan">
                     <div class="item-info">
                         <h3 class="item-nombre">The Macallan 12 Yrs <span class="item-alc">Single Malt</span></h3>
                         <p class="item-desc">Double Cask. Equilibrio perfecto entre notas de miel, cítricos y roble ahumado.</p>
@@ -335,7 +360,7 @@
                     </div>
                 </div>
 
-                <div class="item-doble-compacto">
+                <div class="item-doble-compacto" id="licor-johnnie-blue">
                     <div class="item-info">
                         <h3 class="item-nombre">Johnnie Walker Blue Label <span class="item-alc">Scotch</span></h3>
                         <p class="item-desc">Una obra maestra incomparable. Mezcla de los whiskies más raros y excepcionales.</p>
@@ -346,7 +371,7 @@
                     </div>
                 </div>
 
-                <div class="item-doble-compacto">
+                <div class="item-doble-compacto" id="licor-glenfiddich">
                     <div class="item-info">
                         <h3 class="item-nombre">Glenfiddich 15 Yrs <span class="item-alc">Single Malt</span></h3>
                         <p class="item-desc">Proceso Solera. Miel de brezo cálida, especias oscuras y vainilla rica.</p>
@@ -357,7 +382,7 @@
                     </div>
                 </div>
 
-                <div class="item-doble-compacto">
+                <div class="item-doble-compacto" id="licor-zacapa">
                     <div class="item-info">
                         <h3 class="item-nombre">Ron Zacapa 23 <span class="item-alc">Solera</span></h3>
                         <p class="item-desc">Añejado en las nubes de Guatemala. Caramelo tostado, roble especiado y frutos secos.</p>
@@ -368,7 +393,7 @@
                     </div>
                 </div>
 
-                <div class="item-doble-compacto">
+                <div class="item-doble-compacto" id="licor-don-julio">
                     <div class="item-info">
                         <h3 class="item-nombre">Tequila Don Julio 70 <span class="item-alc">Cristalino</span></h3>
                         <p class="item-desc">La suavidad de un blanco y la complejidad de un añejo. Tonos de vainilla y agave tostado.</p>

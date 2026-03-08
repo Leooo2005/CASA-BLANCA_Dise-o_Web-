@@ -41,6 +41,10 @@ html, body {
     width: 100%;
 }
 
+body.no-scroll {
+    overflow: hidden !important;
+}
+
 /* =========================================
    2. NAVEGACIÓN BASE
    ========================================= */
@@ -300,20 +304,75 @@ html, body {
 .contenedor-img-historia:hover .img-fluida { transform: scale(1.05); }
 
 /* =========================================
-   6. ENLACES ANIMADOS WHATSAPP
+   6. ENLACES ANIMADOS WHATSAPP (CORREGIDO CON SPAN)
    ========================================= */
 .enlace-animado-wa {
-    display: inline-flex; align-items: center; color: var(--dorado); font-size: 1rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;
-    text-decoration: none; position: relative; padding-bottom: 5px; overflow: hidden; 
+    display: inline-flex; 
+    align-items: center; 
+    color: var(--dorado); 
+    font-size: 1rem; 
+    font-weight: 700; 
+    text-transform: uppercase; 
+    letter-spacing: 1px;
+    text-decoration: none; 
+    position: relative; 
+    padding-bottom: 5px; 
+    /* SOLUCIÓN: Eliminamos 'overflow: hidden;' para que no corte la punta de la flecha */
 }
-.enlace-animado-wa::after { content: ''; position: absolute; bottom: 0; left: 0; width: 100%; height: 1px; background-color: rgba(197, 160, 89, 0.3); transition: all 0.4s ease; }
-.flecha-wa { opacity: 0; transform: translateX(-15px); transition: all 0.4s ease; margin-left: -10px; font-size: 1.2rem; }
-.enlace-animado-wa:hover::after { background-color: var(--dorado); height: 2px; }
-.enlace-animado-wa:hover .flecha-wa { opacity: 1; transform: translateX(8px); }
 
+.enlace-animado-wa::after { 
+    content: ''; 
+    position: absolute; 
+    bottom: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 1px; 
+    background-color: rgba(197, 160, 89, 0.3); 
+    transition: all 0.4s ease; 
+}
+
+/* Modificamos el span original */
+.flecha-wa { 
+    opacity: 0; 
+    transform: translateX(-15px); 
+    transition: all 0.4s ease; 
+    margin-left: 5px; 
+    font-family: Arial, sans-serif; 
+    font-size: 1.2rem;
+    
+    /* TRUCO ÉLITE: Hacemos el texto "->" original transparente */
+    color: transparent; 
+    position: relative;
+    display: inline-block;
+}
+
+/* Y proyectamos una flecha elegante y real exactamente en el mismo lugar */
+.flecha-wa::after {
+    content: '\2192'; /* Código de la flecha fina */
+    color: var(--dorado); 
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.enlace-animado-wa:hover::after { 
+    background-color: var(--dorado); 
+    height: 2px; 
+}
+
+.enlace-animado-wa:hover .flecha-wa { 
+    opacity: 1; 
+    transform: translateX(5px); /* Deslizamiento suave sin cortarse */
+}
+
+/* Variante Clara para fondos oscuros */
 .enlace-animado-wa.claro { color: var(--crema); }
 .enlace-animado-wa.claro::after { background-color: rgba(243, 229, 216, 0.3); }
 .enlace-animado-wa.claro:hover::after { background-color: var(--crema); }
+/* Que la flecha inyectada también cambie a claro */
+.enlace-animado-wa.claro .flecha-wa::after { color: var(--crema); }
+
 
 /* =========================================
    7. FÚTBOL Y CÓCTELES
@@ -937,5 +996,140 @@ html, body {
     .logo-texto {
         font-size: 0.9rem;
         letter-spacing: 2px;
+    }
+}
+
+/* =========================================
+   20. BUSCADOR PREMIUM Y HERRAMIENTAS TOP
+   ========================================= */
+.herramientas-top { display: flex; align-items: center; gap: 15px; z-index: 1002; }
+
+.btn-buscar-lujo { background: transparent; border: none; color: var(--dorado); cursor: pointer; transition: transform 0.3s ease; display: flex; align-items: center; padding: 5px; }
+.btn-buscar-lujo:hover { transform: scale(1.1); }
+
+.buscador-dropdown {
+    position: absolute; top: 90px; right: 5%; width: 400px;
+    background-color: var(--cafe-medio); border: 1px solid rgba(197, 160, 89, 0.4);
+    border-radius: 8px; box-shadow: 0 15px 40px rgba(0,0,0,0.8); padding: 20px;
+    opacity: 0; pointer-events: none; transform: translateY(-15px); transition: all 0.3s ease; z-index: 1000;
+}
+.buscador-dropdown.activo { opacity: 1; pointer-events: all; transform: translateY(0); }
+
+.input-wrapper { display: flex; justify-content: space-between; border-bottom: 1px solid var(--dorado); padding-bottom: 5px; }
+#input-buscador { background: transparent; border: none; color: var(--crema); font-family: var(--fuente-textos); font-size: 1rem; width: 90%; outline: none; }
+#input-buscador::placeholder { color: rgba(243, 229, 216, 0.4); font-style: italic; }
+#btn-cerrar-buscador { background: transparent; border: none; color: var(--dorado); font-size: 1.2rem; cursor: pointer; }
+
+/* Selector de Idioma en Buscador */
+.buscador-idioma-box { display: flex; justify-content: center; align-items: center; gap: 10px; margin-top: 15px; font-size: 0.7rem; color: rgba(243, 229, 216, 0.5); text-transform: uppercase; letter-spacing: 1px; }
+.btn-lang-buscar { background: transparent; border: 1px solid rgba(197, 160, 89, 0.3); color: rgba(243, 229, 216, 0.5); padding: 3px 8px; border-radius: 4px; cursor: pointer; transition: all 0.3s; font-family: var(--fuente-textos); font-weight: 700;}
+.btn-lang-buscar.active { border-color: var(--dorado); color: var(--dorado); }
+
+.resultados-busqueda { margin-top: 15px; font-family: var(--fuente-textos); font-size: 0.9rem; color: rgba(243, 229, 216, 0.8); }
+.sugerencia-link { display: block; color: var(--dorado); text-decoration: none; margin-top: 10px; font-weight: 700; border: 1px solid var(--dorado); padding: 10px; text-align: center; border-radius: 4px; transition: all 0.3s ease; }
+.sugerencia-link:hover { background: var(--dorado); color: var(--cafe-muy-oscuro); }
+
+/* =========================================
+   LA MAGIA: EFECTO RESALTADO DEL PLATO BUSCADO (DISCRETO Y PREMIUM)
+   ========================================= */
+@keyframes resplandorPremium {
+    0% { 
+        box-shadow: 0 0 0px transparent; 
+        border-color: rgba(197, 160, 89, 0.15); 
+    }
+    20% { 
+        /* Sombra mucho más fina (12px en vez de 30px) y con menos opacidad */
+        box-shadow: 0 0 12px rgba(197, 160, 89, 0.5); 
+        border-color: var(--dorado); 
+        /* Fondo apenitas dorado (0.05 en vez de 0.1) */
+        background-color: rgba(197, 160, 89, 0.05); 
+        /* Crecimiento súper sutil (1.01 en vez de 1.02) */
+        transform: scale(1.01); 
+    }
+    80% { 
+        box-shadow: 0 0 12px rgba(197, 160, 89, 0.5); 
+        border-color: var(--dorado); 
+        background-color: rgba(197, 160, 89, 0.05); 
+        transform: scale(1.01); 
+    }
+    100% { 
+        box-shadow: 0 0 0px transparent; 
+        border-color: rgba(197, 160, 89, 0.15); 
+        background-color: transparent; 
+        transform: scale(1); 
+    }
+}
+
+.plato-encontrado {
+    animation: resplandorPremium 4s ease-in-out forwards;
+    border-radius: 8px;
+    /* Transición suave para que no sea brusco al terminar */
+    transition: all 0.3s ease; 
+}
+
+@media (max-width: 900px) {
+    .interruptor-idioma { margin: 0 auto 20px auto !important; justify-content: center !important; border-bottom: 1px solid rgba(197, 160, 89, 0.2) !important; padding-bottom: 20px !important; width: 100% !important; display: flex !important; }
+    .herramientas-top { position: absolute; right: 20px; top: 25px; }
+    .buscador-dropdown { width: 90%; right: 5%; top: 75px; }
+}
+@media (max-width: 400px) {
+    .herramientas-top { right: 15px; top: 22px; gap: 10px; }
+    .btn-buscar-lujo svg { width: 18px; height: 18px; }
+    .buscador-dropdown { width: 95%; right: 2.5%; top: 70px; padding: 15px; }
+    #input-buscador { font-size: 0.85rem; }
+    .interruptor-idioma { padding-bottom: 15px !important; gap: 10px !important; }
+}
+
+/* Ajuste de estilo para el idioma dentro del menú hamburguesa */
+@media (max-width: 900px) {
+    .interruptor-idioma { 
+        margin: 0 auto 20px auto !important; 
+        justify-content: center !important;
+        border-bottom: 1px solid rgba(197, 160, 89, 0.2) !important; 
+        padding-bottom: 20px !important;
+        width: 100% !important;
+        display: flex !important;
+    }
+}
+
+/* ==============================================
+   AJUSTES MILIMÉTRICOS PARA CELULARES PEQUEÑOS (400px)
+   ============================================== */
+@media (max-width: 400px) {
+    /* Acercamos la lupa y la hamburguesa un poco más al borde para que no choquen con el logo */
+    .herramientas-top { 
+        right: 15px; 
+        top: 22px; 
+        gap: 10px; /* Menos espacio entre la lupa y las 3 rayitas */
+    }
+
+    /* Achicamos la lupa sutilmente */
+    .btn-buscar-lujo svg {
+        width: 18px;
+        height: 18px;
+    }
+
+    /* El cajón de búsqueda ocupa casi toda la pantalla para aprovechar el espacio */
+    .buscador-dropdown { 
+        width: 95%; 
+        right: 2.5%; 
+        top: 70px; 
+        padding: 15px;
+    }
+
+    /* Hacemos la letra del buscador un poco más pequeña para que quepa bien el texto */
+    #input-buscador {
+        font-size: 0.85rem;
+    }
+
+    /* Ajustamos el selector de idiomas dentro del menú para que no sea tan alto */
+    .interruptor-idioma {
+        margin: 0 auto 15px auto !important;
+        padding-bottom: 15px !important;
+        gap: 10px !important;
+    }
+    
+    .idioma-btn { 
+        font-size: 0.95rem; 
     }
 }

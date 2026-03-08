@@ -23,10 +23,33 @@
             </a>
         </div>
         
-        <div class="menu-toggle" id="mobile-menu">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
+        <div class="herramientas-top">
+            <button id="btn-abrir-buscador" class="btn-buscar-lujo" aria-label="Search menu">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+            </button>
+
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+
+        <div id="caja-buscador-dropdown" class="buscador-dropdown">
+            <div class="input-wrapper">
+                <input type="text" id="input-buscador" placeholder="Type your craving & press Enter..." autocomplete="off">
+                <button id="btn-cerrar-buscador">✕</button>
+            </div>
+            <div class="buscador-idioma-box">
+                <span id="txt-lang-search">Search in:</span>
+                <button class="btn-lang-buscar" data-lang="es">ES</button>
+                <button class="btn-lang-buscar active" data-lang="en">EN</button>
+            </div>
+            
+            <div id="resultados-busqueda" class="resultados-busqueda"></div>
         </div>
 
         <div class="enlaces-nav">
@@ -100,9 +123,9 @@
             </div>
 
             <div class="grid-lujo">
-                <div class="plato-lujo">
+                <div class="plato-lujo" id="plato-tomahawk">
                     <div class="plato-lujo-cabecera">
-                        <h3 class="plato-lujo-nombre">Tomahawk Steak <span class="etiqueta-dieta">GF</span></h3>
+                        <h3 class="plato-lujo-nombre">Premium Tomahawk <span class="etiqueta-dieta">GF</span></h3>
                         <div class="plato-lujo-linea"></div>
                         <span class="plato-lujo-precio">$45</span>
                     </div>
@@ -110,7 +133,7 @@
                     <p class="plato-lujo-desc">Imposing 800g cut, dry-aged for 45 days. Seared to perfection with applewood and rosemary butter.</p>
                 </div>
 
-                <div class="plato-lujo">
+                <div class="plato-lujo" id="plato-bife">
                     <div class="plato-lujo-cabecera">
                         <h3 class="plato-lujo-nombre">Bife de Chorizo (Striploin)</h3>
                         <div class="plato-lujo-linea"></div>
@@ -119,7 +142,7 @@
                     <p class="plato-lujo-desc">Classic 400g cut, renowned for its juiciness and crispy fat cap. Subtly bathed in smoked chimichurri.</p>
                 </div>
 
-                <div class="plato-lujo">
+                <div class="plato-lujo" id="plato-picana">
                     <div class="plato-lujo-cabecera">
                         <h3 class="plato-lujo-nombre">Sword-Grilled Picanha <span class="etiqueta-dieta">GF</span></h3>
                         <div class="plato-lujo-linea"></div>
@@ -128,7 +151,7 @@
                     <p class="plato-lujo-desc">Thin layer of sea salt, slow-roasted over charcoal to preserve its natural juices. Tradition elevated to haute cuisine.</p>
                 </div>
 
-                <div class="plato-lujo">
+                <div class="plato-lujo" id="plato-ribeye">
                     <div class="plato-lujo-cabecera">
                         <h3 class="plato-lujo-nombre">Aged Ribeye</h3>
                         <div class="plato-lujo-linea"></div>
@@ -137,7 +160,7 @@
                     <p class="plato-lujo-desc">Cut with exceptional marbling that melts in your mouth, served over a bed of rustic truffled mashed potatoes.</p>
                 </div>
 
-                <div class="plato-lujo">
+                <div class="plato-lujo" id="plato-tbone">
                     <div class="plato-lujo-cabecera">
                         <h3 class="plato-lujo-nombre">Classic T-Bone</h3>
                         <div class="plato-lujo-linea"></div>
@@ -153,7 +176,7 @@
             </div>
 
             <div class="grid-lujo">
-                <div class="plato-lujo">
+                <div class="plato-lujo" id="plato-salmon">
                     <div class="plato-lujo-cabecera">
                         <h3 class="plato-lujo-nombre">Wild Salmon</h3>
                         <div class="plato-lujo-linea"></div>
@@ -162,7 +185,7 @@
                     <p class="plato-lujo-desc">Fillet with a sweet aged bourbon glaze, resting on a smooth sweet potato purée and tender vegetables.</p>
                 </div>
 
-                <div class="plato-lujo">
+                <div class="plato-lujo" id="plato-risotto">
                     <div class="plato-lujo-cabecera">
                         <h3 class="plato-lujo-nombre">Truffle Risotto <span class="etiqueta-dieta">V</span></h3>
                         <div class="plato-lujo-linea"></div>
@@ -172,7 +195,7 @@
                     <p class="plato-lujo-desc">Creamy arborio rice caressed by the intense aroma of black truffle, mixed mushrooms, and 24-month parmesan cheese.</p>
                 </div>
                 
-                <div class="plato-lujo">
+                <div class="plato-lujo" id="plato-pollo">
                     <div class="plato-lujo-cabecera">
                         <h3 class="plato-lujo-nombre">Wood-Fired Citrus Chicken</h3>
                         <div class="plato-lujo-linea"></div>
@@ -181,7 +204,7 @@
                     <p class="plato-lujo-desc">Half chicken marinated for 24 hours in citrus. Tender inside, with an unforgettable golden and crispy skin.</p>
                 </div>
 
-                <div class="plato-lujo">
+                <div class="plato-lujo" id="plato-pulpo">
                     <div class="plato-lujo-cabecera">
                         <h3 class="plato-lujo-nombre">Grilled Octopus</h3>
                         <div class="plato-lujo-linea"></div>
@@ -190,7 +213,7 @@
                     <p class="plato-lujo-desc">Tentacles grilled to perfection, brushed with garlic olive oil, accompanied by golden baby potatoes.</p>
                 </div>
 
-                <div class="plato-lujo">
+                <div class="plato-lujo" id="plato-costillas">
                     <div class="plato-lujo-cabecera">
                         <h3 class="plato-lujo-nombre">Smoked Ribs</h3>
                         <div class="plato-lujo-linea"></div>
@@ -201,12 +224,12 @@
             </div>
 
             <div class="categoria-menu">
-                <h2 class="titulo-categoria">SIDES</h2>
+                <h2 class="titulo-categoria">Sides</h2>
                 <div class="linea-categoria"></div>
             </div>
 
             <div class="grid-lujo">
-                <div class="plato-lujo">
+                <div class="plato-lujo" id="plato-pure">
                     <div class="plato-lujo-cabecera">
                         <h3 class="plato-lujo-nombre">Rustic Truffle Mashed Potatoes <span class="etiqueta-dieta">V</span></h3>
                         <div class="plato-lujo-linea"></div>
@@ -215,7 +238,7 @@
                     <p class="plato-lujo-desc">Hand-mashed Andean potatoes with clarified butter, heavy cream, and a touch of white truffle oil.</p>
                 </div>
 
-                <div class="plato-lujo">
+                <div class="plato-lujo" id="plato-esparragos">
                     <div class="plato-lujo-cabecera">
                         <h3 class="plato-lujo-nombre">Grilled Asparagus <span class="etiqueta-dieta">GF</span><span class="etiqueta-dieta">V</span></h3>
                         <div class="plato-lujo-linea"></div>
@@ -224,7 +247,7 @@
                     <p class="plato-lujo-desc">Tender charcoal-grilled asparagus, finished with sea salt flakes, lemon, and parmesan cheese shavings.</p>
                 </div>
 
-                <div class="plato-lujo">
+                <div class="plato-lujo" id="plato-mac">
                     <div class="plato-lujo-cabecera">
                         <h3 class="plato-lujo-nombre">Lobster Mac & Cheese</h3>
                         <div class="plato-lujo-linea"></div>
@@ -233,7 +256,7 @@
                     <p class="plato-lujo-desc">Artisanal pasta enveloped in a creamy blend of three aged cheeses and chunks of lobster sautéed in butter.</p>
                 </div>
 
-                <div class="plato-lujo">
+                <div class="plato-lujo" id="plato-champinones">
                     <div class="plato-lujo-cabecera">
                         <h3 class="plato-lujo-nombre">Wild Mushrooms <span class="etiqueta-dieta">GF</span><span class="etiqueta-dieta">V</span></h3>
                         <div class="plato-lujo-linea"></div>
@@ -242,7 +265,7 @@
                     <p class="plato-lujo-desc">Selection of seasonal mushrooms pan-seared with candied garlic, fresh thyme, and a splash of white wine.</p>
                 </div>
 
-                <div class="plato-lujo">
+                <div class="plato-lujo" id="plato-papas">
                     <div class="plato-lujo-cabecera">
                         <h3 class="plato-lujo-nombre">Parmesan Fries <span class="etiqueta-dieta">V</span></h3>
                         <div class="plato-lujo-linea"></div>
@@ -251,7 +274,7 @@
                     <p class="plato-lujo-desc">Thick and crispy cut, dusted with aged parmesan cheese, fresh parsley, and garlic salt.</p>
                 </div>
 
-                <div class="plato-lujo">
+                <div class="plato-lujo" id="plato-ensalada">
                     <div class="plato-lujo-cabecera">
                         <h3 class="plato-lujo-nombre">Fresh Garden Salad <span class="etiqueta-dieta">GF</span><span class="etiqueta-dieta">V</span></h3>
                         <div class="plato-lujo-linea"></div>

@@ -23,10 +23,33 @@
             </a>
         </div>
         
-        <div class="menu-toggle" id="mobile-menu">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
+        <div class="herramientas-top">
+            <button id="btn-abrir-buscador" class="btn-buscar-lujo" aria-label="Buscar menú">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+            </button>
+
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+
+        <div id="caja-buscador-dropdown" class="buscador-dropdown">
+            <div class="input-wrapper">
+                <input type="text" id="input-buscador" placeholder="Escribe tu antojo y presiona Enter..." autocomplete="off">
+                <button id="btn-cerrar-buscador">✕</button>
+            </div>
+            <div class="buscador-idioma-box">
+                <span id="txt-lang-search">Buscar en:</span>
+                <button class="btn-lang-buscar active" data-lang="es">ES</button>
+                <button class="btn-lang-buscar" data-lang="en">EN</button>
+            </div>
+            
+            <div id="resultados-busqueda" class="resultados-busqueda"></div>
         </div>
 
         <div class="enlaces-nav">
@@ -100,7 +123,7 @@
             </div>
 
             <div class="grid-lujo">
-                <div class="plato-lujo">
+                <div class="plato-lujo" id="plato-tomahawk">
                     <div class="plato-lujo-cabecera">
                         <h3 class="plato-lujo-nombre">Tomahawk Steak <span class="etiqueta-dieta">GF</span></h3>
                         <div class="plato-lujo-linea"></div>
@@ -110,7 +133,7 @@
                     <p class="plato-lujo-desc">Imponente corte de 800g madurado en seco por 45 días. Sellado a la perfección con leña de manzano y mantequilla de romero.</p>
                 </div>
 
-                <div class="plato-lujo">
+                <div class="plato-lujo" id="plato-bife">
                     <div class="plato-lujo-cabecera">
                         <h3 class="plato-lujo-nombre">Bife de Chorizo</h3>
                         <div class="plato-lujo-linea"></div>
@@ -119,7 +142,7 @@
                     <p class="plato-lujo-desc">Clásico corte de 400g, reconocido por su jugosidad y su corona de grasa crujiente. Bañado sutilmente en chimichurri ahumado.</p>
                 </div>
 
-                <div class="plato-lujo">
+                <div class="plato-lujo" id="plato-picana">
                     <div class="plato-lujo-cabecera">
                         <h3 class="plato-lujo-nombre">Picaña a la Espada <span class="etiqueta-dieta">GF</span></h3>
                         <div class="plato-lujo-linea"></div>
@@ -128,7 +151,7 @@
                     <p class="plato-lujo-desc">Fina capa de sal marina, asada lentamente al carbón para preservar sus jugos naturales. Tradición llevada a la alta cocina.</p>
                 </div>
 
-                <div class="plato-lujo">
+                <div class="plato-lujo" id="plato-ribeye">
                     <div class="plato-lujo-cabecera">
                         <h3 class="plato-lujo-nombre">Ribeye Añejado</h3>
                         <div class="plato-lujo-linea"></div>
@@ -137,7 +160,7 @@
                     <p class="plato-lujo-desc">Corte con un marmoleo excepcional que se deshace en la boca, servido sobre una cama de puré rústico trufado.</p>
                 </div>
 
-                <div class="plato-lujo">
+                <div class="plato-lujo" id="plato-tbone">
                     <div class="plato-lujo-cabecera">
                         <h3 class="plato-lujo-nombre">T-Bone Clásico</h3>
                         <div class="plato-lujo-linea"></div>
@@ -153,7 +176,7 @@
             </div>
 
             <div class="grid-lujo">
-                <div class="plato-lujo">
+                <div class="plato-lujo" id="plato-salmon">
                     <div class="plato-lujo-cabecera">
                         <h3 class="plato-lujo-nombre">Salmón Salvaje</h3>
                         <div class="plato-lujo-linea"></div>
@@ -162,7 +185,7 @@
                     <p class="plato-lujo-desc">Filete con un glaseado dulce de bourbon añejo, reposando sobre un suave puré de camote y vegetales tiernos.</p>
                 </div>
 
-                <div class="plato-lujo">
+                <div class="plato-lujo" id="plato-risotto">
                     <div class="plato-lujo-cabecera">
                         <h3 class="plato-lujo-nombre">Risotto de Trufa <span class="etiqueta-dieta">V</span></h3>
                         <div class="plato-lujo-linea"></div>
@@ -172,7 +195,7 @@
                     <p class="plato-lujo-desc">Arroz arborio cremoso acariciado por el intenso aroma de la trufa negra, mezcla de hongos y queso parmesano de 24 meses.</p>
                 </div>
                 
-                <div class="plato-lujo">
+                <div class="plato-lujo" id="plato-pollo">
                     <div class="plato-lujo-cabecera">
                         <h3 class="plato-lujo-nombre">Pollo Cítrico a la Leña</h3>
                         <div class="plato-lujo-linea"></div>
@@ -181,7 +204,7 @@
                     <p class="plato-lujo-desc">Medio pollo marinado por 24 horas en cítricos. Suave por dentro, con una piel dorada y crujiente inolvidable.</p>
                 </div>
 
-                <div class="plato-lujo">
+                <div class="plato-lujo" id="plato-pulpo">
                     <div class="plato-lujo-cabecera">
                         <h3 class="plato-lujo-nombre">Pulpo a la Brasa</h3>
                         <div class="plato-lujo-linea"></div>
@@ -190,7 +213,7 @@
                     <p class="plato-lujo-desc">Tentáculos asados al punto perfecto, pincelados con aceite de oliva al ajo, acompañados de papas baby doradas.</p>
                 </div>
 
-                <div class="plato-lujo">
+                <div class="plato-lujo" id="plato-costillas">
                     <div class="plato-lujo-cabecera">
                         <h3 class="plato-lujo-nombre">Costillas Ahumadas</h3>
                         <div class="plato-lujo-linea"></div>
@@ -206,7 +229,7 @@
             </div>
 
             <div class="grid-lujo">
-                <div class="plato-lujo">
+                <div class="plato-lujo" id="plato-pure">
                     <div class="plato-lujo-cabecera">
                         <h3 class="plato-lujo-nombre">Puré Rústico Trufado <span class="etiqueta-dieta">V</span></h3>
                         <div class="plato-lujo-linea"></div>
@@ -215,7 +238,7 @@
                     <p class="plato-lujo-desc">Papas andinas majadas a mano con mantequilla clarificada, crema de leche y un toque de aceite de trufa blanca.</p>
                 </div>
 
-                <div class="plato-lujo">
+                <div class="plato-lujo" id="plato-esparragos">
                     <div class="plato-lujo-cabecera">
                         <h3 class="plato-lujo-nombre">Espárragos a la Brasa <span class="etiqueta-dieta">GF</span><span class="etiqueta-dieta">V</span></h3>
                         <div class="plato-lujo-linea"></div>
@@ -224,7 +247,7 @@
                     <p class="plato-lujo-desc">Espárragos tiernos asados al carbón, terminados con escamas de sal marina, limón y lascas de queso parmesano.</p>
                 </div>
 
-                <div class="plato-lujo">
+                <div class="plato-lujo" id="plato-mac">
                     <div class="plato-lujo-cabecera">
                         <h3 class="plato-lujo-nombre">Mac & Cheese de Langosta</h3>
                         <div class="plato-lujo-linea"></div>
@@ -233,7 +256,7 @@
                     <p class="plato-lujo-desc">Pasta artesanal envuelta en una cremosa mezcla de tres quesos maduros y trozos de langosta salteada en mantequilla.</p>
                 </div>
 
-                <div class="plato-lujo">
+                <div class="plato-lujo" id="plato-champinones">
                     <div class="plato-lujo-cabecera">
                         <h3 class="plato-lujo-nombre">Champiñones Silvestres <span class="etiqueta-dieta">GF</span><span class="etiqueta-dieta">V</span></h3>
                         <div class="plato-lujo-linea"></div>
@@ -242,7 +265,7 @@
                     <p class="plato-lujo-desc">Selección de hongos de temporada salteados al sartén con ajo confitado, tomillo fresco y un toque de vino blanco.</p>
                 </div>
 
-                <div class="plato-lujo">
+                <div class="plato-lujo" id="plato-papas">
                     <div class="plato-lujo-cabecera">
                         <h3 class="plato-lujo-nombre">Papas Fritas Parmesanas <span class="etiqueta-dieta">V</span></h3>
                         <div class="plato-lujo-linea"></div>
@@ -251,7 +274,7 @@
                     <p class="plato-lujo-desc">Corte grueso y crujiente, espolvoreadas con queso parmesano añejo, perejil fresco y sal de ajo.</p>
                 </div>
 
-                <div class="plato-lujo">
+                <div class="plato-lujo" id="plato-ensalada">
                     <div class="plato-lujo-cabecera">
                         <h3 class="plato-lujo-nombre">Ensalada Fresca del Huerto <span class="etiqueta-dieta">GF</span><span class="etiqueta-dieta">V</span></h3>
                         <div class="plato-lujo-linea"></div>
@@ -263,7 +286,7 @@
 
             <div class="letra-pequena-menu">
                 <p>Todos nuestros cortes son certificados Angus Beef. Por favor, informe a su mesero sobre cualquier alergia alimentaria. Los precios incluyen impuestos.</p>
-                <p class="leyenda-dietas"><span>(GF)</span> Libre de Gluten  |  <span>(V)</span> Vegetariano</p>
+                <p class="leyenda-dietas"><span>(GF)</span> Libre de Gluten &nbsp;| &nbsp;<span>(V)</span> Vegetariano</p>
             </div>
 
         </div>

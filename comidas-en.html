@@ -23,10 +23,33 @@
             </a>
         </div>
         
-        <div class="menu-toggle" id="mobile-menu">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
+        <div class="herramientas-top">
+            <button id="btn-abrir-buscador" class="btn-buscar-lujo" aria-label="Search menu">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+            </button>
+
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+
+        <div id="caja-buscador-dropdown" class="buscador-dropdown">
+            <div class="input-wrapper">
+                <input type="text" id="input-buscador" placeholder="Type your craving & press Enter..." autocomplete="off">
+                <button id="btn-cerrar-buscador">✕</button>
+            </div>
+            <div class="buscador-idioma-box">
+                <span id="txt-lang-search">Search in:</span>
+                <button class="btn-lang-buscar" data-lang="es">ES</button>
+                <button class="btn-lang-buscar active" data-lang="en">EN</button>
+            </div>
+            
+            <div id="resultados-busqueda" class="resultados-busqueda"></div>
         </div>
 
         <div class="enlaces-nav">
@@ -100,7 +123,7 @@
             </div>
 
             <div class="grid-visual">
-                <div class="item-visual-plato">
+                <div class="item-visual-plato" id="plato-burger-casablanca">
                     <div class="visual-img-contenedor">
                         <img src="img/HAMBURGUESA-CASA-BLANCA-GOURMET.webp" alt="Casa Blanca Gourmet Burger" class="visual-img">
                     </div>
@@ -114,7 +137,7 @@
                     </div>
                 </div>
 
-                <div class="item-visual-plato">
+                <div class="item-visual-plato" id="plato-burger-trufa">
                     <div class="visual-img-contenedor">
                         <img src="img/HAMBURGUESA-TRUFA-HONGOS.webp" alt="Truffle & Mushroom Burger" class="visual-img">
                     </div>
@@ -127,7 +150,7 @@
                     </div>
                 </div>
 
-                <div class="item-visual-plato">
+                <div class="item-visual-plato" id="plato-burger-blue">
                     <div class="visual-img-contenedor">
                         <img src="img/Blue Cheese & Bacon.webp" alt="Blue Cheese & Bacon Burger" class="visual-img">
                     </div>
@@ -140,7 +163,7 @@
                     </div>
                 </div>
 
-                <div class="item-visual-plato">
+                <div class="item-visual-plato" id="plato-burger-chicken">
                     <div class="visual-img-contenedor">
                         <img src="img/Crispy Chicken Parm.webp" alt="Crispy Chicken Burger" class="visual-img">
                     </div>
@@ -153,7 +176,7 @@
                     </div>
                 </div>
 
-                <div class="item-visual-plato">
+                <div class="item-visual-plato" id="plato-burger-beyond">
                     <div class="visual-img-contenedor">
                         <img src="img/Beyond Burger.webp" alt="Beyond Vegan Burger" class="visual-img">
                     </div>
@@ -173,7 +196,7 @@
             </div>
 
             <div class="grid-visual">
-                <div class="item-visual-plato">
+                <div class="item-visual-plato" id="plato-pollo-ahumado">
                     <div class="visual-img-contenedor">
                         <img src="img/Medio Pollo Ahumado.webp" alt="Smoked Half Chicken" class="visual-img">
                     </div>
@@ -186,7 +209,7 @@
                     </div>
                 </div>
 
-                <div class="item-visual-plato">
+                <div class="item-visual-plato" id="plato-matambre">
                     <div class="visual-img-contenedor">
                         <img src="img/Matambre a la Pizza.webp" alt="Matambre a la Pizza" class="visual-img">
                     </div>
@@ -200,7 +223,7 @@
                     </div>
                 </div>
                 
-                <div class="item-visual-plato">
+                <div class="item-visual-plato" id="plato-choripan">
                     <div class="visual-img-contenedor">
                         <img src="img/Choripán Gourmet.webp" alt="Gourmet Choripán" class="visual-img">
                     </div>
@@ -213,7 +236,7 @@
                     </div>
                 </div>
 
-                <div class="item-visual-plato">
+                <div class="item-visual-plato" id="plato-brochetas">
                     <div class="visual-img-contenedor">
                         <img src="img/Brochetas Mixtas.webp" alt="Mixed Skewers" class="visual-img">
                     </div>
@@ -226,7 +249,7 @@
                     </div>
                 </div>
 
-                <div class="item-visual-plato">
+                <div class="item-visual-plato" id="plato-portobello">
                     <div class="visual-img-contenedor">
                         <img src="img/Portobello Grillado.webp" alt="Grilled Portobello Vegetarian" class="visual-img">
                     </div>

@@ -23,13 +23,37 @@
             </a>
         </div>
         
-        <div class="menu-toggle" id="mobile-menu">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
+        <div class="herramientas-top">
+            <button id="btn-abrir-buscador" class="btn-buscar-lujo" aria-label="Buscar menú">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+            </button>
+
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+
+        <div id="caja-buscador-dropdown" class="buscador-dropdown">
+            <div class="input-wrapper">
+                <input type="text" id="input-buscador" placeholder="Escribe tu antojo y presiona Enter..." autocomplete="off">
+                <button id="btn-cerrar-buscador">✕</button>
+            </div>
+            <div class="buscador-idioma-box">
+                <span id="txt-lang-search">Buscar en:</span>
+                <button class="btn-lang-buscar active" data-lang="es">ES</button>
+                <button class="btn-lang-buscar" data-lang="en">EN</button>
+            </div>
+            
+            <div id="resultados-busqueda" class="resultados-busqueda"></div>
         </div>
 
         <div class="enlaces-nav">
+            
             <div class="interruptor-idioma">
                 <a href="comidas.html" class="idioma-btn activo">ES</a>
                 <span class="separador">|</span>
@@ -100,7 +124,8 @@
             </div>
 
             <div class="grid-visual">
-                <div class="item-visual-plato">
+                
+                <div class="item-visual-plato" id="plato-burger-casablanca">
                     <div class="visual-img-contenedor">
                         <img src="img/HAMBURGUESA-CASA-BLANCA-GOURMET.webp" alt="Hamburguesa Casa Blanca Gourmet" class="visual-img">
                     </div>
@@ -114,7 +139,7 @@
                     </div>
                 </div>
 
-                <div class="item-visual-plato">
+                <div class="item-visual-plato" id="plato-burger-trufa">
                     <div class="visual-img-contenedor">
                         <img src="img/HAMBURGUESA-TRUFA-HONGOS.webp" alt="Hamburguesa Trufa & Hongos" class="visual-img">
                     </div>
@@ -127,7 +152,7 @@
                     </div>
                 </div>
 
-                <div class="item-visual-plato">
+                <div class="item-visual-plato" id="plato-burger-blue">
                     <div class="visual-img-contenedor">
                         <img src="img/Blue Cheese & Bacon.webp" alt="Hamburguesa Blue Cheese & Bacon" class="visual-img">
                     </div>
@@ -140,7 +165,7 @@
                     </div>
                 </div>
 
-                <div class="item-visual-plato">
+                <div class="item-visual-plato" id="plato-burger-chicken">
                     <div class="visual-img-contenedor">
                         <img src="img/Crispy Chicken Parm.webp" alt="Hamburguesa Crispy Chicken" class="visual-img">
                     </div>
@@ -153,7 +178,7 @@
                     </div>
                 </div>
 
-                <div class="item-visual-plato">
+                <div class="item-visual-plato" id="plato-burger-beyond">
                     <div class="visual-img-contenedor">
                         <img src="img/Beyond Burger.webp" alt="Hamburguesa Beyond Vegana" class="visual-img">
                     </div>
@@ -173,7 +198,8 @@
             </div>
 
             <div class="grid-visual">
-                <div class="item-visual-plato">
+                
+                <div class="item-visual-plato" id="plato-pollo-ahumado">
                     <div class="visual-img-contenedor">
                         <img src="img/Medio Pollo Ahumado.webp" alt="Medio Pollo Ahumado" class="visual-img">
                     </div>
@@ -186,7 +212,7 @@
                     </div>
                 </div>
 
-                <div class="item-visual-plato">
+                <div class="item-visual-plato" id="plato-matambre">
                     <div class="visual-img-contenedor">
                         <img src="img/Matambre a la Pizza.webp" alt="Matambre a la Pizza" class="visual-img">
                     </div>
@@ -200,7 +226,7 @@
                     </div>
                 </div>
                 
-                <div class="item-visual-plato">
+                <div class="item-visual-plato" id="plato-choripan">
                     <div class="visual-img-contenedor">
                         <img src="img/Choripán Gourmet.webp" alt="Choripán Gourmet" class="visual-img">
                     </div>
@@ -213,7 +239,7 @@
                     </div>
                 </div>
 
-                <div class="item-visual-plato">
+                <div class="item-visual-plato" id="plato-brochetas">
                     <div class="visual-img-contenedor">
                         <img src="img/Brochetas Mixtas.webp" alt="Brochetas Mixtas" class="visual-img">
                     </div>
@@ -226,7 +252,7 @@
                     </div>
                 </div>
 
-                <div class="item-visual-plato">
+                <div class="item-visual-plato" id="plato-portobello">
                     <div class="visual-img-contenedor">
                         <img src="img/Portobello Grillado.webp" alt="Portobello Grillado Vegetariano" class="visual-img">
                     </div>
@@ -242,7 +268,7 @@
 
             <div class="letra-pequena-menu">
                 <p>Nuestras hamburguesas se preparan con carne 100% Angus molida a diario. El pan brioche es horneado en casa cada mañana. Todas las opciones de grill vienen acompañadas de papas fritas rústicas.</p>
-                <p class="leyenda-dietas"><span>(GF)</span> Libre de Gluten  |  <span>(V)</span> Vegetariano</p>
+                <p class="leyenda-dietas"><span>(GF)</span> Libre de Gluten &nbsp;| &nbsp;<span>(V)</span> Vegetariano</p>
             </div>
 
         </div>
