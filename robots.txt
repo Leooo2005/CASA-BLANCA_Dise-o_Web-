@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Bloqueamos el acceso a carpetas internas que no necesitan estar en Google (opcional pero profesional)
+Disallow: /img/
+
+# Aquí le decimos a Google dónde está tu mapa del sitio (Cambia "tusitio.com" por tu dominio real cuando lo subas a internet)
+Sitemap: https://www.tusitio.com/sitemap.xml
