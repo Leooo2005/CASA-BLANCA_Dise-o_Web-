@@ -1041,3 +1041,99 @@ body.no-scroll {
         gap: 10px !important; 
     }
 }
+
+/* ======================== */
+/* AVISO DE COOKIES PRO     */
+/* ======================== */
+.aviso-cookies {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(15, 15, 15, 0.98);
+    color: #ececec;
+    padding: 20px;
+    z-index: 9999;
+    box-shadow: 0 -5px 20px rgba(0,0,0,0.5);
+    backdrop-filter: blur(10px);
+    transition: transform 0.5s ease-in-out;
+    font-family: 'Syne', sans-serif;
+    font-size: 0.9rem;
+    border-top: 1px solid #c9a473; /* Borde dorado elegante */
+}
+.aviso-cookies.oculto {
+    transform: translateY(100%);
+}
+.contenido-cookies {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+.texto-cookies {
+    flex: 1;
+}
+.texto-cookies p {
+    margin: 0;
+    line-height: 1.5;
+}
+.link-politicas {
+    color: #c9a473;
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+.link-politicas:hover {
+    color: #fff;
+}
+.botones-cookies {
+    display: flex;
+    gap: 10px;
+}
+.btn-cookie {
+    padding: 10px 20px;
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    cursor: pointer;
+    border-radius: 0;
+    transition: all 0.3s ease;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+.btn-primario {
+    background-color: #c9a473;
+    color: #000;
+    border: 1px solid #c9a473;
+}
+.btn-primario:hover {
+    background-color: #fff;
+    border-color: #fff;
+    color: #000;
+}
+.btn-secundario {
+    background-color: transparent;
+    color: #c9a473;
+    border: 1px solid #c9a473;
+}
+.btn-secundario:hover {
+    background-color: rgba(201, 164, 115, 0.1);
+}
+
+/* Responsivo para móviles */
+@media (max-width: 992px) {
+    .contenido-cookies {
+        flex-direction: column;
+        text-align: center;
+    }
+    .botones-cookies {
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+    }
+    .btn-cookie {
+        flex: 1;
+        min-width: 120px; /* Para que los botones no queden muy pequeños */
+    }
+}

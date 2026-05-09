@@ -1,293 +1,178 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Premium Cuts & Mains | Casa Blanca</title>
-    <meta name="description" content="Casa Blanca - Grill & Coffee House. Enjoy premium cuts, signature burgers, cocktails, and specialty coffee in an exclusive atmosphere in Quito.">
-    <meta name="keywords" content="restaurant, premium cuts, tomahawk, burgers, cocktails, bar, quito, ecuador, fine dining, casa blanca">
+    
+    <!-- Título y Descripción Específicos -->
+    <title>Reservas y Contacto | Casa Blanca</title>
+    <meta name="description" content="Reserva tu mesa en Casa Blanca, Quito. Contáctanos para asegurar tu lugar y disfrutar de una experiencia gastronómica inolvidable con cortes premium.">
+    <meta name="keywords" content="reservas, reservar mesa, contacto, ubicación, restaurante, Quito, Casa Blanca">
     <meta name="author" content="Dominion Studio">
     <meta name="robots" content="index, follow">
 
-    <link rel="icon" type="image/webp" href="img/Logo-casa-blanca.png">
+    <!-- Etiquetas Canonical y Hreflang (SEO Bilingüe Profesional) -->
+    <link rel="canonical" href="https://www.tusitio.com/contacto.html">
+    <link rel="alternate" hreflang="es" href="https://www.tusitio.com/contacto.html">
+    <link rel="alternate" hreflang="en" href="https://www.tusitio.com/contacto-en.html">
+    <link rel="alternate" hreflang="x-default" href="https://www.tusitio.com/contacto.html">
+
+    <!-- Open Graph (Para compartir en WhatsApp, Facebook, etc.) -->
+    <meta property="og:title" content="Reservas y Contacto | Casa Blanca">
+    <meta property="og:description" content="Reserva tu mesa en Casa Blanca. Asegura tu lugar para una experiencia inolvidable.">
+    <meta property="og:image" content="https://www.tusitio.com/img/Logo-casa-blanca.webp">
+    <meta property="og:url" content="https://www.tusitio.com/contacto.html">
+    <meta property="og:type" content="website">
+
+    <!-- Recursos de Diseño -->
+    <link rel="icon" type="image/webp" href="img/Logo-casa-blanca.webp">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Syne:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+
+    <!-- ========================================== -->
+    <!-- ESPACIO PREPARADO PARA ANALÍTICAS (GA4 / META) -->
+    <!-- ========================================== -->
+    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX'); // Reemplazar con ID de cliente
+    </script> -->
 </head>
 <body>
 
     <nav class="navbar-premium">
         <div class="logo-contenedor">
-            <a href="index-en.html" class="logo-link">
+            <a href="index.html" class="logo-link">
             <img src="img/Logo-casa-blanca.webp" alt="Casa Blanca Logo" class="logo-nav">
             <span class="logo-texto">CASA<br>BLANCA</span>
             </a>
         </div>
         
         <div class="herramientas-top">
-            <button id="btn-abrir-buscador" class="btn-buscar-lujo" aria-label="Search menu">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                    <circle cx="11" cy="11" r="8"></circle>
-                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-                </svg>
+            <button id="btn-abrir-buscador" class="btn-buscar-lujo" aria-label="Abrir buscador">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
             </button>
-
             <div class="menu-toggle" id="mobile-menu">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
+                <span class="bar"></span><span class="bar"></span><span class="bar"></span>
             </div>
         </div>
 
         <div id="caja-buscador-dropdown" class="buscador-dropdown">
             <div class="input-wrapper">
-                <input type="text" id="input-buscador" placeholder="Type your craving & press Enter..." autocomplete="off">
+                <input type="text" id="input-buscador" placeholder="Escribe tu antojo y presiona Enter..." autocomplete="off">
                 <button id="btn-cerrar-buscador">✕</button>
             </div>
             <div class="buscador-idioma-box">
-                <span id="txt-lang-search">Search in:</span>
-                <button class="btn-lang-buscar" data-lang="es">ES</button>
-                <button class="btn-lang-buscar active" data-lang="en">EN</button>
+                <span id="txt-lang-search">Buscar en:</span>
+                <button class="btn-lang-buscar active" data-lang="es">ES</button>
+                <button class="btn-lang-buscar" data-lang="en">EN</button>
             </div>
-            
             <div id="resultados-busqueda" class="resultados-busqueda"></div>
         </div>
 
         <div class="enlaces-nav">
-            
             <div class="interruptor-idioma">
-                <a href="platos-principales.html" class="idioma-btn">ES</a>
+                <a href="contacto.html" class="idioma-btn activo">ES</a>
                 <span class="separador">|</span>
-                <a href="platos-principales-en.html" class="idioma-btn activo">EN</a>
+                <a href="contacto-en.html" class="idioma-btn">EN</a>
             </div>
 
-            <a href="index-en.html">Home</a>
+            <a href="index.html">Inicio</a>
             
             <div class="mega-dropdown">
-                <a href="#" class="dropbtn activo">Our Kitchen ▾</a>
+                <a href="#" class="dropbtn">Nuestra Cocina ▾</a>
                 <div class="mega-contenido">
                     <div class="mega-fila">
                         <div class="mega-columna-wifi">
-                            <h3 class="titulo-mega">Connected Experience</h3>
-                            <p class="desc-mega">Connect to our complimentary high-speed network.</p>
+                            <h3 class="titulo-mega">Experiencia Conectada</h3>
+                            <p class="desc-mega">Conéctate a nuestra red de alta velocidad de cortesía.</p>
                             <div class="caja-wifi">
-                                <img src="img/CODIGO-QR.webp" alt="Free WiFi QR" class="img-qr">
-                                <div class="info-wifi">
-                                    <p><span>Network:</span> CasaBlanca_VIP</p>
-                                    <p><span>Password:</span> Grill2026</p>
-                                </div>
-                            </div>
-                            <div class="promo-lunes efecto-levantar">
-                                🔥 <strong>Special Monday:</strong> Discounts on our Family Grill Banquet $24.99
+                                <img src="img/CODIGO-QR.webp" alt="WiFi Gratis QR" class="img-qr">
+                                <div class="info-wifi"><p><span>Red:</span> CasaBlanca_VIP</p><p><span>Clave:</span> Grill2026</p></div>
                             </div>
                         </div>
                         <div class="mega-columna-enlaces">
-                            <h3 class="titulo-mega">Gastronomic Menu</h3>
-                            <a href="platos-principales-en.html" class="activo">Premium Cuts & Mains</a>
-                            <a href="comidas-en.html">Grill & Signature Burgers</a>
-                            <a href="menu-infantil-en.html">Kids Menu</a>
+                            <h3 class="titulo-mega">Menú Gastronómico</h3>
+                            <a href="platos-principales.html">Cortes Premium & Fuertes</a>
+                            <a href="comidas.html">Parrilla & Hamburguesas de Autor</a>
+                            <a href="menu-infantil.html">Menú Infantil</a>
                         </div>
                     </div>
                 </div>
             </div>
 
             <div class="mega-dropdown">
-                <a href="#" class="dropbtn">Bar & Mixology ▾</a>
+                <a href="#" class="dropbtn">Bar & Mixología ▾</a>
                 <div class="mega-contenido bebidas-ancho">
                     <div class="mega-columna-enlaces">
-                        <h3 class="titulo-mega">Our Bar</h3>
-                        <a href="cocteles-especiales-en.html">Signature Cocktails</a>
-                        <a href="cervezas-vinos-en.html">Craft Beers & Wines</a>
+                        <h3 class="titulo-mega">Nuestro Bar</h3>
+                        <a href="cocteles-especiales.html">Cócteles de Autor</a>
+                        <a href="cervezas-vinos.html">Cervezas Artesanales & Vinos</a>
                     </div>
                 </div>
             </div>
 
-            <a href="postres-en.html">Desserts</a>
-            <a href="contacto-en.html">Reservations</a>
+            <a href="postres.html">Postres</a>
+            <a href="contacto.html" class="activo">Reservas</a>
         </div>
     </nav>
 
-    <header class="hero-interno hero-comidas">
-        <div class="overlay-oscuro fuerte"></div>
+    <header class="hero-interno hero-contacto">
+        <div class="overlay-oscuro"></div>
         <div class="contenido-interno">
-            <h1 class="titulo-interno">Premium Cuts & Mains</h1>
+            <h1 class="titulo-interno">Contacto y Reservas</h1>
             <div class="linea-adorno-centro"></div>
-            <p class="subtitulo-interno">Our premium grilled selection</p>
+            <p class="subtitulo-interno">Asegura tu lugar en la experiencia Casa Blanca</p>
         </div>
     </header>
 
-    <section class="seccion-menu-lujo">
-        <div class="contenedor-menu-lujo">
+    <section class="seccion-contacto-lujo">
+        <div class="contenedor-contacto">
             
-            <div class="categoria-menu">
-                <h2 class="titulo-categoria">Premium Cuts</h2>
-                <div class="linea-categoria"></div>
-            </div>
-
-            <div class="grid-lujo">
-                <div class="plato-lujo" id="plato-tomahawk">
-                    <div class="plato-lujo-cabecera">
-                        <h3 class="plato-lujo-nombre">Premium Tomahawk <span class="etiqueta-dieta">GF</span></h3>
-                        <div class="plato-lujo-linea"></div>
-                        <span class="plato-lujo-precio">$45</span>
-                    </div>
-                    <span class="recomendacion-chef">★ Chef's Recommendation</span>
-                    <p class="plato-lujo-desc">Imposing 800g cut dry-aged for 45 days. Perfectly seared with applewood smoke and rosemary butter.</p>
-                </div>
-
-                <div class="plato-lujo" id="plato-bife">
-                    <div class="plato-lujo-cabecera">
-                        <h3 class="plato-lujo-nombre">Bife de Chorizo (Strip Steak)</h3>
-                        <div class="plato-lujo-linea"></div>
-                        <span class="plato-lujo-precio">$28</span>
-                    </div>
-                    <p class="plato-lujo-desc">Classic 400g Argentine cut, renowned for its juiciness and crispy fat cap. Subtly bathed in smoked chimichurri.</p>
-                </div>
-
-                <div class="plato-lujo" id="plato-picana">
-                    <div class="plato-lujo-cabecera">
-                        <h3 class="plato-lujo-nombre">Picaña on the Sword <span class="etiqueta-dieta">GF</span></h3>
-                        <div class="plato-lujo-linea"></div>
-                        <span class="plato-lujo-precio">$32</span>
-                    </div>
-                    <p class="plato-lujo-desc">Fine layer of sea salt, slowly roasted over charcoal to preserve its natural juices. Tradition brought to haute cuisine.</p>
-                </div>
-
-                <div class="plato-lujo" id="plato-ribeye">
-                    <div class="plato-lujo-cabecera">
-                        <h3 class="plato-lujo-nombre">Aged Ribeye</h3>
-                        <div class="plato-lujo-linea"></div>
-                        <span class="plato-lujo-precio">$38</span>
-                    </div>
-                    <p class="plato-lujo-desc">Cut with exceptional marbling that melts in the mouth, served on a bed of rustic truffled puree.</p>
-                </div>
-
-                <div class="plato-lujo" id="plato-tbone">
-                    <div class="plato-lujo-cabecera">
-                        <h3 class="plato-lujo-nombre">Classic T-Bone</h3>
-                        <div class="plato-lujo-linea"></div>
-                        <span class="plato-lujo-precio">$35</span>
-                    </div>
-                    <p class="plato-lujo-desc">The best of both worlds: the tenderness of the tenderloin and the flavor of the strip. Accompanied by asparagus wrapped in smoked bacon.</p>
-                </div>
-            </div>
-
-            <div class="categoria-menu">
-                <h2 class="titulo-categoria">From Sea and Land</h2>
-                <div class="linea-categoria"></div>
-            </div>
-
-            <div class="grid-lujo">
-                <div class="plato-lujo" id="plato-salmon">
-                    <div class="plato-lujo-cabecera">
-                        <h3 class="plato-lujo-nombre">Wild Salmon</h3>
-                        <div class="plato-lujo-linea"></div>
-                        <span class="plato-lujo-precio">$24</span>
-                    </div>
-                    <p class="plato-lujo-desc">Fillet with a sweet aged bourbon glaze, resting on a smooth sweet potato puree and tender vegetables.</p>
-                </div>
-
-                <div class="plato-lujo" id="plato-risotto">
-                    <div class="plato-lujo-cabecera">
-                        <h3 class="plato-lujo-nombre">Truffle Risotto <span class="etiqueta-dieta">V</span></h3>
-                        <div class="plato-lujo-linea"></div>
-                        <span class="plato-lujo-precio">$22</span>
-                    </div>
-                    <span class="recomendacion-chef">★ Chef's Recommendation</span>
-                    <p class="plato-lujo-desc">Creamy Arborio rice caressed by the intense aroma of black truffle, mixed mushrooms, and 24-month aged parmesan cheese.</p>
+            <div class="info-contacto-caja">
+                <h2 class="titulo-contacto"><span>Visítanos</span><br>Te estamos esperando</h2>
+                <p class="desc-contacto">Descubre un entorno diseñado para el disfrute. Ya sea para una cena romántica, una reunión de negocios o ver el partido con amigos, tenemos la mesa perfecta para ti.</p>
+                
+                <div class="bloque-info">
+                    <h3 class="subtitulo-info">Ubicación</h3>
+                    <p>Av. Principal y Calle Secundaria<br>Quito, Ecuador</p>
                 </div>
                 
-                <div class="plato-lujo" id="plato-pollo">
-                    <div class="plato-lujo-cabecera">
-                        <h3 class="plato-lujo-nombre">Citrus Wood-Fired Chicken</h3>
-                        <div class="plato-lujo-linea"></div>
-                        <span class="plato-lujo-precio">$18</span>
-                    </div>
-                    <p class="plato-lujo-desc">Half chicken marinated for 24 hours in citrus. Tender inside, with an unforgettable golden and crispy skin.</p>
+                <div class="bloque-info">
+                    <h3 class="subtitulo-info">Horarios de Atención</h3>
+                    <p>Lunes a Domingo: 09:00 AM - 11:00 PM</p>
                 </div>
 
-                <div class="plato-lujo" id="plato-pulpo">
-                    <div class="plato-lujo-cabecera">
-                        <h3 class="plato-lujo-nombre">Grilled Octopus</h3>
-                        <div class="plato-lujo-linea"></div>
-                        <span class="plato-lujo-precio">$26</span>
+                <div class="bloque-redes">
+                    <h3 class="subtitulo-info">Nuestras Redes</h3>
+                    <div class="enlaces-redes">
+                        <a href="#" class="link-red-social">Instagram</a>
+                        <a href="#" class="link-red-social">Facebook</a>
+                        <a href="#" class="link-red-social">TikTok</a>
                     </div>
-                    <p class="plato-lujo-desc">Perfectly roasted tentacles, brushed with garlic olive oil, accompanied by golden baby potatoes.</p>
-                </div>
-
-                <div class="plato-lujo" id="plato-costillas">
-                    <div class="plato-lujo-cabecera">
-                        <h3 class="plato-lujo-nombre">Smoked Ribs</h3>
-                        <div class="plato-lujo-linea"></div>
-                        <span class="plato-lujo-precio">$25</span>
-                    </div>
-                    <p class="plato-lujo-desc">Half rack of pork slow-cooked for 12 hours, glazed with our artisanal tamarind BBQ sauce.</p>
                 </div>
             </div>
 
-            <div class="categoria-menu">
-                <h2 class="titulo-categoria">Sides</h2>
-                <div class="linea-categoria"></div>
-            </div>
-
-            <div class="grid-lujo">
-                <div class="plato-lujo" id="plato-pure">
-                    <div class="plato-lujo-cabecera">
-                        <h3 class="plato-lujo-nombre">Rustic Truffle Puree <span class="etiqueta-dieta">V</span></h3>
-                        <div class="plato-lujo-linea"></div>
-                        <span class="plato-lujo-precio">$8</span>
+            <div class="acciones-contacto-caja">
+                <a href="https://wa.me/593999999999?text=Hola,%20quisiera%20hacer%20una%20reserva" target="_blank" class="btn-gigante-reserva wa-btn">
+                    <span class="icono-gigante">📱</span>
+                    <div class="texto-btn-gigante">
+                        <h3>Reserva por WhatsApp</h3>
+                        <p>Asistencia inmediata para reservas y pedidos.</p>
                     </div>
-                    <p class="plato-lujo-desc">Andean potatoes hand-mashed with clarified butter, heavy cream, and a touch of white truffle oil.</p>
+                </a>
+
+                <div class="mapa-contenedor">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.7902264850893!2d-78.4820986!3d-0.1806532!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMDCsMTAnNTAuNCJTIDc4wrMyOCw1NS42Ilc!5e0!3m2!1ses!2sec!4v1614285812345!5m2!1ses!2sec" allowfullscreen="" loading="lazy"></iframe>
                 </div>
 
-                <div class="plato-lujo" id="plato-esparragos">
-                    <div class="plato-lujo-cabecera">
-                        <h3 class="plato-lujo-nombre">Grilled Asparagus <span class="etiqueta-dieta">GF</span><span class="etiqueta-dieta">V</span></h3>
-                        <div class="plato-lujo-linea"></div>
-                        <span class="plato-lujo-precio">$9</span>
-                    </div>
-                    <p class="plato-lujo-desc">Tender charcoal-grilled asparagus, finished with sea salt flakes, lemon, and parmesan shavings.</p>
+                <div class="nota-vestimenta">
+                    <p>Contamos con parqueadero privado y seguridad.<br><em>* Se recomienda reservar con anticipación los fines de semana.</em></p>
                 </div>
-
-                <div class="plato-lujo" id="plato-mac">
-                    <div class="plato-lujo-cabecera">
-                        <h3 class="plato-lujo-nombre">Lobster Mac & Cheese</h3>
-                        <div class="plato-lujo-linea"></div>
-                        <span class="plato-lujo-precio">$14</span>
-                    </div>
-                    <p class="plato-lujo-desc">Artisanal pasta enveloped in a creamy blend of three aged cheeses and chunks of butter-sauteed lobster.</p>
-                </div>
-
-                <div class="plato-lujo" id="plato-champinones">
-                    <div class="plato-lujo-cabecera">
-                        <h3 class="plato-lujo-nombre">Wild Mushrooms <span class="etiqueta-dieta">GF</span><span class="etiqueta-dieta">V</span></h3>
-                        <div class="plato-lujo-linea"></div>
-                        <span class="plato-lujo-precio">$7</span>
-                    </div>
-                    <p class="plato-lujo-desc">Selection of seasonal mushrooms pan-seared with confit garlic, fresh thyme, and a touch of white wine.</p>
-                </div>
-
-                <div class="plato-lujo" id="plato-papas">
-                    <div class="plato-lujo-cabecera">
-                        <h3 class="plato-lujo-nombre">Parmesan Fries <span class="etiqueta-dieta">V</span></h3>
-                        <div class="plato-lujo-linea"></div>
-                        <span class="plato-lujo-precio">$6</span>
-                    </div>
-                    <p class="plato-lujo-desc">Thick and crispy cut, dusted with aged parmesan cheese, fresh parsley, and garlic salt.</p>
-                </div>
-
-                <div class="plato-lujo" id="plato-ensalada">
-                    <div class="plato-lujo-cabecera">
-                        <h3 class="plato-lujo-nombre">Fresh Garden Salad <span class="etiqueta-dieta">GF</span><span class="etiqueta-dieta">V</span></h3>
-                        <div class="plato-lujo-linea"></div>
-                        <span class="plato-lujo-precio">$7</span>
-                    </div>
-                    <p class="plato-lujo-desc">Mix of organic green leaves, roasted cherry tomatoes, toasted walnuts, and a house balsamic vinaigrette.</p>
-                </div>
-            </div>
-
-            <div class="letra-pequena-menu">
-                <p>All our cuts are Certified Angus Beef. Please inform your server of any food allergies. Prices include taxes.</p>
-                <p class="leyenda-dietas"><span>(GF)</span> Gluten Free &nbsp;| &nbsp;<span>(V)</span> Vegetarian</p>
             </div>
 
         </div>
@@ -295,16 +180,25 @@
 
     <footer class="footer-responsable">
         <div class="linea-adorno"></div>
-        <p class="texto-responsable">
-            Los mejores cortes merecen ser saboreados con pausa.<br>
-            <span class="ingles">The finest cuts deserve to be savored slowly.</span>
-        </p>
-        <p class="copyright-demo">© 2026 Designed by Dominion Studio. All rights reserved.</p>
+        <p class="texto-responsable">Disfruta cada momento, pero controla el alcohol.<br><span class="ingles">Enjoy every moment, but drink responsibly.</span></p>
+        <p class="copyright-demo">© 2026 Diseñado por Dominion Studio. Todos los derechos reservados.</p>
     </footer>
 
-    <a href="https://wa.me/593999999999?text=Hello,%20I%20would%20like%20to%20book%20a%20table" target="_blank" class="btn-flotante-wa">
-        <span class="icono-wa">📱</span> Book a Table
-    </a>
+    <!-- ======================== -->
+    <!-- AVISO DE COOKIES PRO     -->
+    <!-- ======================== -->
+    <div id="aviso-cookies" class="aviso-cookies oculto">
+        <div class="contenido-cookies">
+            <div class="texto-cookies">
+                <p>Utilizamos cookies propias y de terceros para mejorar tu experiencia, analizar el tráfico y personalizar el contenido. Puedes aceptar todas las cookies, rechazarlas o configurar tus preferencias. <a href="politicas.html" class="link-politicas">Más información</a>.</p>
+            </div>
+            <div class="botones-cookies">
+                <button id="btn-configurar-cookies" class="btn-cookie btn-secundario">Configurar</button>
+                <button id="btn-rechazar-cookies" class="btn-cookie btn-secundario">Rechazar</button>
+                <button id="btn-aceptar-cookies" class="btn-cookie btn-primario">Aceptar Todas</button>
+            </div>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>

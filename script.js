@@ -294,3 +294,53 @@ window.addEventListener('DOMContentLoaded', () => {
         }
     }
 });
+
+// ========================
+// LÓGICA DE COOKIES PRO
+// ========================
+document.addEventListener("DOMContentLoaded", () => {
+    const avisoCookies = document.getElementById("aviso-cookies");
+    const btnAceptar = document.getElementById("btn-aceptar-cookies");
+    const btnRechazar = document.getElementById("btn-rechazar-cookies");
+    const btnConfigurar = document.getElementById("btn-configurar-cookies");
+
+    if (avisoCookies) {
+        // 1. Revisar si ya tomó una decisión antes
+        if (!localStorage.getItem("cookiesAceptadas") && !localStorage.getItem("cookiesRechazadas")) {
+            // Mostrar el aviso después de 1 segundo
+            setTimeout(() => {
+                avisoCookies.classList.remove("oculto");
+            }, 1000);
+        }
+
+        // 2. Acción: ACEPTAR TODAS
+        if (btnAceptar) {
+            btnAceptar.addEventListener("click", () => {
+                localStorage.setItem("cookiesAceptadas", "true");
+                avisoCookies.classList.add("oculto");
+            });
+        }
+
+        // 3. Acción: RECHAZAR
+        if (btnRechazar) {
+            btnRechazar.addEventListener("click", () => {
+                localStorage.setItem("cookiesRechazadas", "true");
+                avisoCookies.classList.add("oculto");
+            });
+        }
+
+        // 4. Acción: CONFIGURAR (Simulación para el Demo con detección de idioma)
+        if (btnConfigurar) {
+            btnConfigurar.addEventListener("click", () => {
+                // Verificamos si el HTML actual tiene el atributo lang="en"
+                const esIngles = document.documentElement.lang === "en";
+                
+                if(esIngles) {
+                    alert("Preferences Module: In the production version, a panel will open here to enable or disable analytical and marketing cookies.");
+                } else {
+                    alert("Módulo de Preferencias: En la versión en producción, aquí se abrirá un panel para activar o desactivar cookies analíticas y de marketing.");
+                }
+            });
+        }
+    }
+});
